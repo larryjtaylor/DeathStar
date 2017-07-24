@@ -195,6 +195,32 @@ class Employee
             return false;
         }
     }
+
+    function addDepartment($department)
+    {
+        $executed = $GLOBALS['DB']->exec("INSERT INTO departments_employees (department_id, employee_id) VALUES ({$department->getId()}, {$this->getId()});");
+        if ($executed) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function getDepartments()
+    {
+        $returned_departments = $GLOBALS['DB']->query("SELECT departments.* FROM employees
+            JOIN departments_employees ON (departments_employees.employee_id = employees.id)
+            JOIN departments ON (departments.id = departments_employees.department_id)
+            WHERE employees.id = {$this->getId()};");
+        $departments = array();
+        foreach ($returned_departments as $department) {
+            $dept_name = $department['dept_name'];
+            $id = $department['id'];
+            $new_department = new Department($dept_name, $id);
+            array_push($departments, $new_department);
+        }
+        return $departments;
+    }
 }
 
 
