@@ -139,7 +139,6 @@
             $this->assertEquals($pay, $result);
         }
 
-
         function testSetPay()
         {
             //Arrange
@@ -157,6 +156,42 @@
 
             //Assert
             $this->assertEquals($new_pay, $result);
+        }
+
+        function testGetRecord()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+
+            //Act
+            $result = $test_employee->getRecord();
+
+            //Assert
+            $this->assertEquals($record, $result);
+        }
+
+        function testSetRecord()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $new_record = "Making great strides";
+
+            //Act
+            $test_employee->setRecord($new_record);
+            $result = $test_employee->getRecord();
+
+            //Assert
+            $this->assertEquals($new_record, $result);
         }
     }
 ?>

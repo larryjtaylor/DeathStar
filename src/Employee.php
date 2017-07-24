@@ -57,6 +57,16 @@ class Employee
     {
         $this->pay = intval($new_pay);
     }
+
+    function getRecord()
+    {
+        return $this->record;
+    }
+
+    function setRecord($new_record)
+    {
+        $this->record = (string) $new_record;
+    }
 }
 
 
