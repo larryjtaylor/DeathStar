@@ -5,8 +5,9 @@
     */
 
     require_once "src/Division.php";
+    require_once "src/Department.php";
 
-    $server = 'mysql:host=localhost:8889;dbname=death_star';
+    $server = 'mysql:host=localhost:8889;dbname=death_star_test';
     $username = 'root';
     $password = 'root';
     $DB = new PDO($server, $username, $password);
@@ -16,6 +17,7 @@
         protected function tearDown()
         {
             Division::deleteAll();
+            Department::deleteAll();
         }
 
         function testGetDivName()
@@ -125,6 +127,30 @@
 
             // Assert
             $this->assertEquals($test_division_2, $result);
+        }
+
+        function testGetDepartments()
+        {
+            //Arrange
+            $div_name = "Work stuff";
+            $test_division = new Division($div_name);
+            $test_division->save();
+
+            $test_division_id = $test_division->getId();
+
+            $dept_name = "Email client";
+            $test_department = new Department($dept_name, $test_division_id);
+            $test_department->save();
+
+            $dept_name_2 = "Meet with boss";
+            $test_department_2 = new Department($dept_name_2, $test_division_id);
+            $test_department_2->save();
+
+            //Act
+            $result = $test_division->getDepartments();
+
+            //Assert
+            $this->assertEquals([$test_department, $test_department_2], $result);
         }
     }
 ?>

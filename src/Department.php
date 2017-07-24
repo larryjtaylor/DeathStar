@@ -3,11 +3,13 @@
     class Department
     {
         private $dept_name;
+        private $division_id;
         private $id;
 
-        function __construct($dept_name, $id= null)
+        function __construct($dept_name, $division_id, $id= null)
         {
             $this->dept_name = $dept_name;
+            $this->division_id = $division_id;
             $this->id = $id;
         }
 
@@ -26,9 +28,14 @@
             return $this->id;
         }
 
+        function getDivisionId()
+        {
+            return $this->division_id;
+        }
+
         function save()
         {
-            $executed = $GLOBALS['DB']->exec("INSERT INTO  departments (dept_name) VALUES ('{$this->getDeptName()}');");
+            $executed = $GLOBALS['DB']->exec("INSERT INTO  departments (dept_name, division_id) VALUES ('{$this->getDeptName()}', {$this->getDivisionId()});");
             if ($executed) {
                 $this->id = $GLOBALS['DB']->lastInsertId();
                 return true;
@@ -43,8 +50,9 @@
             $departments = array();
             foreach($returned_departments as $department) {
                 $dept_name = $department['dept_name'];
+                $division_id = $department['division_id'];
                 $id = $department['id'];
-                $new_department = new Department($dept_name, $id);
+                $new_department = new Department($dept_name, $division_id, $id);
                 array_push($departments, $new_department);
             }
             return $departments;
@@ -67,9 +75,10 @@
             $returned_departments->execute();
             foreach ($returned_departments as $department) {
                 $dept_name = $department['dept_name'];
+                $division_id = $department['division_id'];
                 $id = $department['id'];
                 if ($id == $search_id) {
-                    $returned_department = new Department($dept_name, $id);
+                    $returned_department = new Department($dept_name, $division_id, $id);
                 }
             }
             return $returned_department;

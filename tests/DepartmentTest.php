@@ -5,8 +5,9 @@
     */
 
     require_once "src/Department.php";
+    require_once "src/Division.php";
 
-    $server = 'mysql:host=localhost:8889;dbname=death_star';
+    $server = 'mysql:host=localhost:8889;dbname=death_star_test';
     $username = 'root';
     $password = 'root';
     $DB = new PDO($server, $username, $password);
@@ -16,13 +17,19 @@
         protected function tearDown()
         {
             Department::deleteAll();
+            Division::deleteAll();
         }
 
         function testGetDeptName()
         {
             // Arrange
+            $div_name = "Army";
+            $test_division = new Division($div_name);
+            $test_division->save();
+
             $dept_name = "High Command";
-            $test_department = new Department($dept_name);
+            $division_id = $test_division->getId();
+            $test_department = new Department($dept_name, $division_id);
 
             // Act
             $result = $test_department->getDeptName();
@@ -34,9 +41,15 @@
         function testSetDeptName()
         {
             //Arrange
+            $div_name = "Navy";
+            $test_division = new Division($div_name);
+            $test_division->save();
+
             $dept_name = "Security";
-            $test_department = new Department($dept_name);
-            $new_dept_name = "Maintanence";
+            $division_id = $test_division->getId();
+            $test_department = new Department($dept_name, $division_id);
+
+            $new_dept_name = "Maintenance";
 
             //Act
             $test_department->setDeptName($new_dept_name);
@@ -49,8 +62,13 @@
         function testGetId()
         {
             //Arrange
-            $dept_name = "Pilots";
-            $test_department = new Department($dept_name);
+            $div_name = "Maintenance";
+            $test_division = new Division($div_name);
+            $test_division->save();
+
+            $dept_name = "Engineering";
+            $division_id = $test_division->getId();
+            $test_department = new Department($dept_name, $division_id);
             $test_department->save();
             // Act
             $result = $test_department->getId();
@@ -59,11 +77,35 @@
             $this->assertTrue(is_numeric($result));
         }
 
+        function testGetDivisionId()
+      {
+          //Arrange
+          $div_name = "Troops";
+          $test_division = new Division($div_name);
+          $test_division->save();
+
+          $division_id = $test_division->getId();
+          $dept_name = "Death Star Troopers";
+          $test_task = new Department($dept_name, $division_id);
+          $test_task->save();
+
+          //Act
+          $result = $test_task->getDivisionId();
+
+          //Assert
+          $this->assertEquals($division_id, $result);;
+      }
+
         function testSave()
         {
             //Arrange
-            $dept_name = "Pilots";
-            $test_department = new Department($dept_name);
+            $div_name = "Support Crew";
+            $test_division = new Division($div_name);
+            $test_division->save();
+
+            $dept_name = "Technician";
+            $division_id = $test_division->getId();
+            $test_department = new Department($dept_name, $division_id);
 
             // Act
             $executed = $test_department->save();
@@ -75,12 +117,17 @@
         function testGetAll()
         {
             //Arrange
-            $dept_name = "Literally";
-            $test_department = new Department($dept_name);
+            $div_name = "Officers";
+            $test_division = new Division($div_name);
+            $test_division->save();
+            $division_id = $test_division->getId();
+
+            $dept_name = "Lieutenant";
+            $test_department = new Department($dept_name, $division_id);
             $test_department->save();
 
-            $dept_name_2 = "Support";
-            $test_department_2 = new Department($dept_name_2);
+            $dept_name_2 = "Colonel";
+            $test_department_2 = new Department($dept_name_2, $division_id);
             $test_department_2->save();
 
             // Act
@@ -93,12 +140,17 @@
         function testDeleteAll()
         {
             //Arrange
+            $div_name = "Officers";
+            $test_division = new Division($div_name);
+            $test_division->save();
+            $division_id = $test_division->getId();
+
             $dept_name = "Commanders";
-            $test_department = new Department($dept_name);
+            $test_department = new Department($dept_name, $division_id);
             $test_department->save();
 
             $dept_name_2 = "Storm Troopers";
-            $test_department_2 = new Department($dept_name_2);
+            $test_department_2 = new Department($dept_name_2, $division_id);
             $test_department_2->save();
 
             // Act
@@ -112,12 +164,17 @@
         function testFind()
         {
             //Arrange
-            $dept_name = "IT";
-            $test_department = new Department($dept_name);
+            $div_name = "Parks and Rec";
+            $test_division = new Division($div_name);
+            $test_division->save();
+            $division_id = $test_division->getId();
+
+            $dept_name = "Litter Control";
+            $test_department = new Department($dept_name, $division_id);
             $test_department->save();
 
-            $dept_name_2 = "Storm Troopers";
-            $test_department_2 = new Department($dept_name_2);
+            $dept_name_2 = "Landscaping";
+            $test_department_2 = new Department($dept_name_2, $division_id);
             $test_department_2->save();
 
             // Act
@@ -130,28 +187,39 @@
         function testUpdate()
         {
             // Arrange
-            $dept_name = "Shooeos";
-            $test_dept = new Department($dept_name);
+
+            $dept_name = 'Becky';
+            $test_division = new Division($dept_name);
+            $test_division->save();
+            $division_id = $test_division->getId();
+
+            $dept_name = "Waste Management";
+            $test_dept = new Department($dept_name, $division_id);
             $test_dept->save();
 
-            $new_dept_name = "Shoes";
+            $new_dept_name = "Waste Management";
 
             // Act
             $test_dept->update($new_dept_name);
 
             // Assert
-            $this->assertEquals("Shoes", $test_dept->getDeptName());
+            $this->assertEquals("Waste Management", $test_dept->getDeptName());
         }
 
         function testDelete()
         {
             // Arrange
+            $dept_name = 'Becky';
+            $test_division = new Division($dept_name);
+            $test_division->save();
+            $division_id = $test_division->getId();
+
             $dept_name_1 = "Walking Department";
-            $test_dept_1 = new Department($dept_name_1);
+            $test_dept_1 = new Department($dept_name_1, $division_id);
             $test_dept_1->save();
 
-            $dept_name_2 = "Running Shoes";
-            $test_dept_2 = new Department($dept_name_2);
+            $dept_name_2 = "Training";
+            $test_dept_2 = new Department($dept_name_2, $division_id);
             $test_dept_2->save();
 
             // Act

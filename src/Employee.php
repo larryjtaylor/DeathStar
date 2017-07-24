@@ -190,7 +190,7 @@ class Employee
     {
         $executed = $GLOBALS['DB']->exec("DELETE FROM employees WHERE id = {$this->getId()};");
         if ($executed) {
-            return true;
+            ("DELETE FROM departments_employees WHERE id = {$this->getId()};");
         } else {
             return false;
         }

@@ -74,6 +74,20 @@
             }
             return $returned_division;
         }
+
+        function getDepartments()
+        {
+            $departments = Array();
+            $returned_departments = $GLOBALS['DB']->query("SELECT * FROM departments WHERE division_id = {$this->getId()};");
+            foreach($returned_departments as $department) {
+                $dept_name = $department['dept_name'];
+                $id = $department['id'];
+                $division_id = $department['division_id'];
+                $new_department = new Department($dept_name, $division_id, $id);
+                array_push($departments, $new_department);
+            }
+            return $departments;
+        }
     }
 
  ?>
