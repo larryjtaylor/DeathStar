@@ -238,6 +238,7 @@
 
         function testGetAll()
         {
+            //Arrange
             $name = "Chewy";
             $rank = "Major";
             $species = "Wookie";
@@ -263,6 +264,7 @@
 
         function testDeleteAll()
         {
+            //Arrange
             $name = "Chewy";
             $rank = "Major";
             $species = "Wookie";
@@ -285,6 +287,52 @@
 
             //Assert
             $this->assertEquals([], $result);
+        }
+
+        function testFind()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $test_employee->save();
+
+            $name2 = "Han";
+            $rank2 = "General";
+            $species2 = "Human";
+            $pay2 = 100;
+            $record2 = "Insubordinate";
+            $test_employee2 = new Employee($name2, $rank2, $species2, $pay2, $record2);
+            $test_employee2->save();
+
+            //Act
+            $result = Employee::find($test_employee->getId());
+
+            //Assert
+            $this->assertEquals($test_employee, $result);
+        }
+
+        function testUpdateName()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $test_employee->save();
+
+            $new_name = "Han";
+
+            //Act
+            $test_employee->updateName($new_name);
+
+            //Assert
+            $this->assertEquals($new_name, $test_employee->getName());
         }
     }
 ?>
