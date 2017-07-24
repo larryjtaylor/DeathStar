@@ -16,9 +16,9 @@
             return $this->div_name;
         }
 
-        function setDivName($div_name)
+        function setDivName($new_div_name)
         {
-            // $this->div_name = (string) $new_div_name;
+            $this->div_name = (string) $new_div_name;
         }
 
         function getId()

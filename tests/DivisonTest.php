@@ -25,5 +25,20 @@
             // Assert
             $this->assertEquals($div_name, $result);
         }
+
+        function testSetDivName()
+        {
+            //Arrange
+            $div_name = "Security";
+            $test_div_name = new Division($div_name);
+            $new_div_name = "Maintanence";
+
+            //Act
+            $test_div_name->setDivName($new_div_name);
+            $result = $test_div_name->getDivName();
+
+            //Assert
+            $this->assertEquals($new_div_name, $result);
+        }
     }
 ?>
