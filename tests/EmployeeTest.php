@@ -85,5 +85,41 @@
             //Assert
             $this->assertEquals($new_rank, $result);
         }
+
+        function testGetSpecies()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+
+            //Act
+            $result = $test_employee->getSpecies();
+
+            //Assert
+            $this->assertEquals($species, $result);
+        }
+
+        function testSetSpecies()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $new_species = "Bothan";
+
+            //Act
+            $test_employee->setSpecies($new_species);
+            $result = $test_employee->getSpecies();
+
+            //Assert
+            $this->assertEquals($new_species, $result);
+        }
     }
 ?>

@@ -37,6 +37,16 @@ class Employee
     {
         $this->rank = (string) $new_rank;
     }
+
+    function getSpecies()
+    {
+        return $this->species;
+    }
+
+    function setSpecies($new_species)
+    {
+        $this->species = (string) $new_species;
+    }
 }
 
 
