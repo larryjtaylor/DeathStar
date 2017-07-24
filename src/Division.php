@@ -23,10 +23,19 @@
 
         function getId()
         {
-            // return $this->id;
+            return $this->id;
         }
 
-
+        function save()
+        {
+            $executed = $GLOBALS['DB']->query("SELECT * FROM divisions");
+            if ($executed) {
+                $this->id = $GLOBALS['DB']->lastInsertId();
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
  ?>

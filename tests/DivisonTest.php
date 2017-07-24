@@ -40,5 +40,31 @@
             //Assert
             $this->assertEquals($new_div_name, $result);
         }
+
+        function testGetId()
+        {
+            //Arrange
+            $div_name = "Pilots";
+            $test_div_name = new Division($div_name);
+            $test_div_name->save();
+            // Act
+            $result = $test_div_name->getId();
+
+            // Assert
+            $this->assertTrue(is_numeric($result));
+        }
+
+        function testSave()
+        {
+            //Arrange
+            $div_name = "Pilots";
+            $test_div_name = new Division($div_name);
+
+            // Act
+            $executed = $test_div_name->save();
+
+            // Assert
+            $this->assertTrue($executed, "Division not successfully saved to the database.");
+        }
     }
 ?>
