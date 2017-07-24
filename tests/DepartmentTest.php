@@ -8,6 +8,7 @@
     require_once "src/Division.php";
     require_once "src/Employee.php";
 
+
     $server = 'mysql:host=localhost:8889;dbname=death_star_test';
     $username = 'root';
     $password = 'root';

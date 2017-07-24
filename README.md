@@ -70,6 +70,7 @@ _The app will use PHPunit,  Silex, and Twig._
 * CREATE TABLE divisions (id serial PRIMARY KEY, div_name VARCHAR (50));
 * CREATE TABLE departments (id serial PRIMARY KEY, dept_name VARCHAR (50));
 * CREATE TABLE departments_employees (id serial PRIMARY KEY, department_id INT, employee_id INT);
+* ALTER TABLE departments ADD division_id INT;
 
 ### License
 
