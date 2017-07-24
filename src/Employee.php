@@ -27,6 +27,16 @@ class Employee
     {
         $this->name = (string) $new_name;
     }
+
+    function getRank()
+    {
+        return $this->rank;
+    }
+
+    function setRank($new_rank)
+    {
+        $this->rank = (string) $new_rank;
+    }
 }
 
 
