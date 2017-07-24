@@ -215,8 +215,9 @@ class Employee
         $departments = array();
         foreach ($returned_departments as $department) {
             $dept_name = $department['dept_name'];
+            $division_id = $department['division_id'];
             $id = $department['id'];
-            $new_department = new Department($dept_name, $id);
+            $new_department = new Department($dept_name, $division_id, $id);
             array_push($departments, $new_department);
         }
         return $departments;
