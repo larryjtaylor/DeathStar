@@ -41,7 +41,6 @@
         {
             $returned_divisions = $GLOBALS['DB']->query("SELECT * FROM divisions;");
             $divisions = array();
-            var_dump($returned_divisions);
             foreach($returned_divisions as $division) {
                 $div_name = $division['div_name'];
                 $id = $division['id'];
@@ -59,6 +58,22 @@
             } else {
                 return false;
             }
+        }
+
+
+        static function find($search_id)
+        {
+            $returned_divisions = $GLOBALS['DB']->prepare("SELECT * FROM divisions WHERE id = :id");
+            $returned_divisions->bindParam(':id', $search_id, PDO::PARAM_STR);
+            $returned_divisions->execute();
+            foreach ($returned_divisions as $division) {
+                $div_name = $division['div_name'];
+                $id = $division['id'];
+                if ($id == $search_id) {
+                    $returned_division = new Division($div_name, $id);
+                }
+            }
+            return $returned_division;
         }
     }
 
