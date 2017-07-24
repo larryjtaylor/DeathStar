@@ -193,5 +193,41 @@
             //Assert
             $this->assertEquals($new_record, $result);
         }
+
+        function testGetId()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $test_employee->save();
+
+            //Act
+            $result = $test_employee->getId();
+
+            //Assert
+            $this->assertTrue(is_numeric($result));
+        }
+
+        function testSave()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $test_employee->save();
+
+            //Act
+            $executed = $test_employee->save();
+
+            //Assert
+            $this->assertTrue($executed, "Employee not successfully saved to database");
+        }
     }
 ?>

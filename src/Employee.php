@@ -67,6 +67,22 @@ class Employee
     {
         $this->record = (string) $new_record;
     }
+
+    function getId()
+    {
+        return $this->id;
+    }
+
+    function save()
+    {
+        $executed = $GLOBALS['DB']->exec("INSERT INTO employees (name, rank, species, pay, record) VALUES ('{$this->getName()}', '{$this->getRank()}', '{$this->getSpecies()}', {$this->getPay()}, '{$this->getRecord()}');");
+        if ($executed) {
+            $this->id = $GLOBALS['DB']->lastInsertId();
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 
