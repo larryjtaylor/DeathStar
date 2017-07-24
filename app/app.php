@@ -20,5 +20,22 @@
     $app->get('/', function() use ($app) {
        return $app['twig']->render('index.html.twig');
     });
+
+    $app-get('army', function() use ($app) {
+        return $app['twig']->render('army.html.twig');
+    });
+
+    $app-get('navy', function() use ($app) {
+        return $app['twig']->render('navy.html.twig');
+    });
+
+    $app-get('battle_station', function() use ($app) {
+        return $app['twig']->render('battle_station.html.twig');
+    });
+
+    $app-get('vader', function() use ($app) {
+        return $app['twig']->render('vader.html.twig');
+    });
+
     return $app;
 ?>
