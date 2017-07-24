@@ -121,5 +121,42 @@
             //Assert
             $this->assertEquals($new_species, $result);
         }
+
+        function testGetPay()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+
+            //Act
+            $result = $test_employee->getPay();
+
+            //Assert
+            $this->assertEquals($pay, $result);
+        }
+
+
+        function testSetPay()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $new_pay = 1000;
+
+            //Act
+            $test_employee->setPay($new_pay);
+            $result = $test_employee->getPay();
+
+            //Assert
+            $this->assertEquals($new_pay, $result);
+        }
     }
 ?>

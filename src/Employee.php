@@ -47,6 +47,16 @@ class Employee
     {
         $this->species = (string) $new_species;
     }
+
+    function getPay()
+    {
+        return $this->pay;
+    }
+
+    function setPay($new_pay)
+    {
+        $this->pay = intval($new_pay);
+    }
 }
 
 
