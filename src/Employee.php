@@ -83,6 +83,33 @@ class Employee
             return false;
         }
     }
+
+    static function getAll()
+    {
+        $returned_employees = $GLOBALS['DB']->query("SELECT * FROM employees;");
+        $employees = array();
+        foreach($returned_employees as $employee) {
+            $name = $employee['name'];
+            $rank = $employee['rank'];
+            $species = $employee['species'];
+            $pay = $employee['pay'];
+            $record = $employee['record'];
+            $id = $employee['id'];
+            $new_employee = new Employee($name, $rank, $species, $pay, $record, $id);
+            array_push($employees, $new_employee);
+        }
+        return $employees;
+    }
+
+    static function deleteAll()
+    {
+        $executed = $GLOBALS['DB']->exec("DELETE FROM employees;");
+        if ($executed) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 
