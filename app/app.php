@@ -3,6 +3,7 @@
     require_once __DIR__.'/../vendor/autoload.php';
     require_once __DIR__.'/../src/Employee.php';
     require_once __DIR__.'/../src/Division.php';
+    require_once __DIR__.'/../src/Department.php';
 
     $server = 'mysql:host=localhost:8889;dbname=death_star';
     $username = 'root';

@@ -471,7 +471,6 @@
             $division_id = $test_division->getId();
 
             $dept_name = "Pilots";
-            // $division_id = 5;
             $test_department = new Department($dept_name, $division_id);
             $test_department->save();
 
@@ -500,13 +499,11 @@
 
             $dept_name = "Pilots";
 
-            // $division_id = 6;
             $test_department = new Department($dept_name, $division_id);
             $test_department->save();
 
             $dept_name2 = "Operations";
 
-            // $division_id2 = 7;
             $test_department2 = new Department($dept_name2, $division_id);
             $test_department2->save();
 
