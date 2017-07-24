@@ -60,7 +60,6 @@
             }
         }
 
-
         static function find($search_id)
         {
             $returned_divisions = $GLOBALS['DB']->prepare("SELECT * FROM divisions WHERE id = :id");
