@@ -163,6 +163,28 @@ class Employee
             return false;
         }
     }
+
+    function updatePay($new_pay)
+    {
+        $executed = $GLOBALS['DB']->exec("UPDATE employees SET pay = {$new_pay} WHERE id = {$this->getId()};");
+        if ($executed) {
+            $this->setPay($new_pay);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function updateRecord($new_record)
+    {
+        $executed = $GLOBALS['DB']->exec("UPDATE employees SET record = '{$new_record}' WHERE id = {$this->getId()};");
+        if ($executed) {
+            $this->setRecord($new_record);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 
