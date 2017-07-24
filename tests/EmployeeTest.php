@@ -5,8 +5,9 @@
     * @backupStaticAttributes disabled
     */
 
-    require_once "src/Employee.php";
     require_once "src/Department.php";
+    require_once "src/Division.php";
+    require_once "src/Employee.php";
 
     $server = 'mysql:host=localhost:8889;dbname=death_star_test';
     $username = 'root';
@@ -18,8 +19,9 @@
 
         protected function tearDown()
         {
-            Employee::deleteAll();
             Department::deleteAll();
+            Division::deleteAll();
+            Employee::deleteAll();
         }
 
         function testGetName()
@@ -463,8 +465,14 @@
             $test_employee2 = new Employee($name2, $rank2, $species2, $pay2, $record2);
             $test_employee2->save();
 
+            $dept_name = 'Becky';
+            $test_division = new Division($dept_name);
+            $test_division->save();
+            $division_id = $test_division->getId();
+
             $dept_name = "Pilots";
-            $test_department = new Department($dept_name);
+            // $division_id = 5;
+            $test_department = new Department($dept_name, $division_id);
             $test_department->save();
 
             //Act
@@ -485,12 +493,19 @@
             $test_employee = new Employee($name, $rank, $species, $pay, $record);
             $test_employee->save();
 
+            $dept_name = 'Becky';
+            $test_division = new Division($dept_name);
+            $test_division->save();
+            $division_id = $test_division->getId();
+
             $dept_name = "Pilots";
-            $test_department = new Department($dept_name);
+            // $division_id = 6;
+            $test_department = new Department($dept_name, $division_id);
             $test_department->save();
 
             $dept_name2 = "Operations";
-            $test_department2 = new Department($dept_name2);
+            // $division_id2 = 7;
+            $test_department2 = new Department($dept_name2, $division_id);
             $test_department2->save();
 
             //Act
