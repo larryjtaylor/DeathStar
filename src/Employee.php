@@ -141,6 +141,28 @@ class Employee
             return false;
         }
     }
+
+    function updateRank($new_rank)
+    {
+        $executed = $GLOBALS['DB']->exec("UPDATE employees SET rank = '{$new_rank}' WHERE id = {$this->getId()};");
+        if ($executed) {
+            $this->setRank($new_rank);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    function updateSpecies($new_species)
+    {
+        $executed = $GLOBALS['DB']->exec("UPDATE employees SET species = '{$new_species}' WHERE id = {$this->getId()};");
+        if ($executed) {
+            $this->setSpecies($new_species);
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
 
 
