@@ -6,6 +6,7 @@
     */
 
     require_once "src/Employee.php";
+    require_once "src/Department.php";
 
     $server = 'mysql:host=localhost:8889;dbname=death_star_test';
     $username = 'root';
@@ -18,6 +19,7 @@
         protected function tearDown()
         {
             Employee::deleteAll();
+            Department::deleteAll();
         }
 
         function testGetName()
@@ -440,6 +442,63 @@
 
             //Assert
             $this->assertEquals([$test_employee2], Employee::getAll());
+        }
+
+        function testAddDepartment()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $test_employee->save();
+
+            $name2 = "Chewy";
+            $rank2 = "Major";
+            $species2 = "Wookie";
+            $pay2 = 50;
+            $record2 = "Major failure";
+            $test_employee2 = new Employee($name2, $rank2, $species2, $pay2, $record2);
+            $test_employee2->save();
+
+            $dept_name = "Pilots";
+            $test_department = new Department($dept_name);
+            $test_department->save();
+
+            //Act
+            $test_employee->addDepartment($test_department);
+
+            //Assert
+            $this->assertEquals([$test_department], $test_employee->getDepartments());
+        }
+
+        function testGetDepartments()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $test_employee->save();
+
+            $dept_name = "Pilots";
+            $test_department = new Department($dept_name);
+            $test_department->save();
+
+            $dept_name2 = "Operations";
+            $test_department2 = new Department($dept_name2);
+            $test_department2->save();
+
+            //Act
+            $test_employee->addDepartment($test_department);
+            $test_employee->addDepartment($test_department2);
+
+            //Assert
+            $this->assertEquals([$test_department, $test_department2], $test_employee->getDepartments());
         }
     }
 ?>
