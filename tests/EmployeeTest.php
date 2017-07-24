@@ -415,5 +415,31 @@
             //Assert
             $this->assertEquals($new_record, $test_employee->getRecord());
         }
+
+        function test_delete()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $test_employee->save();
+
+            $name2 = "Chewy";
+            $rank2 = "Major";
+            $species2 = "Wookie";
+            $pay2 = 50;
+            $record2 = "Major failure";
+            $test_employee2 = new Employee($name2, $rank2, $species2, $pay2, $record2);
+            $test_employee2->save();
+
+            //Act
+            $test_employee->delete();
+
+            //Assert
+            $this->assertEquals([$test_employee2], Employee::getAll());
+        }
     }
 ?>
