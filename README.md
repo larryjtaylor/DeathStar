@@ -2,7 +2,7 @@
 
 #### _Epicodus-PHP, Week 5 Group Project, 07.27.2017_
 
-#### By _**Brittany Kerr, Calla Rudolph, Nathan Stewart, Larry Taylor**_
+#### By _**Brittany Kerr, Dylan Lewis, Calla Rudolph, Nathan Stewart, Larry Taylor**_
 
 ## Description
 
@@ -71,12 +71,26 @@ _The app will use PHPunit,  Silex, and Twig._
 * CREATE TABLE departments (id serial PRIMARY KEY, dept_name VARCHAR (50));
 * CREATE TABLE departments_employees (id serial PRIMARY KEY, department_id INT, employee_id INT);
 * ALTER TABLE departments ADD division_id INT;
+* INSERT INTO divisions (div_name) VALUES ('Army');
+* INSERT INTO divisions (div_name) VALUES ('Navy');
+* INSERT INTO divisions (div_name) VALUES ('Battle Station');
+* INSERT INTO divisions (div_name) VALUES ('Imperial');
+* INSERT INTO departments (dept_name, division_id) VALUES ('Army Officers', 1);
+* INSERT INTO departments (dept_name, division_id) VALUES ('Army Troopers', 1);
+* INSERT INTO departments (dept_name, division_id) VALUES ('Navy Officers', 2);
+* INSERT INTO departments (dept_name, division_id) VALUES ('Navy Troopers', 2);
+* INSERT INTO departments (dept_name, division_id) VALUES ('Gunners', 3);
+* INSERT INTO departments (dept_name, division_id) VALUES ('Battle Station Troopers', 3);
+* INSERT INTO departments (dept_name, division_id) VALUES ('Support/Maintenance', 3);
+* INSERT INTO departments (dept_name, division_id) VALUES ('Security', 3);
+* INSERT INTO departments (dept_name, division_id) VALUES ('Stormtroopers', 4);
+* INSERT INTO departments (dept_name, division_id) VALUES ('Pilots', 2);
 
 ### License
 
 MIT License
 
-Copyright &copy; 2017 Brittany Kerr, Calla Rudolph, Nathan Stewart, Larry Taylor
+Copyright &copy; 2017 Brittany Kerr, Dylan Lewis, Calla Rudolph, Nathan Stewart, Larry Taylor
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
