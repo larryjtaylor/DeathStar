@@ -6,24 +6,23 @@
         <title>Death Star "HR" Portal</title>
     </head>
     <body>
-        <form action="/gunners" method="post">
-            <h3>Add Gunner to Database</h3>
+        <h1>{{ gunners.getName }}</h1>
+        <ul>
+            <li>Rank: {{ gunners.getRank }}</li>
+            <li>Species: {{ gunners.getSpecies }}</li>
+            <li>Pay: {{ gunners.getPay }} Galactic Credits</li>
+            <li>Record: {{gunners.getRecord }}</li>
+        </ul>
+        <h3> Update Battle Station Gunner</h3>
+        <form action="/gunners/{{ gunners.getId }}" method="post">
+            <input name="_method" type="hidden" value="patch">
             <input type="text" name="name" placeholder="Enter Name" required>
             <input type="text" name="rank" placeholder="Enter Rank" required>
             <input type="text" name="species" placeholder="Enter Species" required>
             <input type="number" name="pay" placeholder="Enter Pay" required>
             <input type="text" name="record" placeholder="Enter Record" required>
-            <button type="submit" class="btn btn-success">Add Gunner</button>
+            <button type="submit" class="btn btn-success">Update Battle Station Gunner</button>
         </form>
-
-        {% if gunners is not empty %}
-            <h3>Gunners:</h3>
-            <ul>
-                {% for gunner in gunners %}
-                <li><a href="gunners/{{ gunner.getId }}">{{ gunner.getName }}</a></li>
-                {% endfor %}
-            </ul>
-        {% endif %}
         <a href="/">Home</a>
     </body>
 </html>

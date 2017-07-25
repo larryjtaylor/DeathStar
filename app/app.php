@@ -205,6 +205,26 @@
         return $app['twig']->render('battle_station_gunners.html.twig', array('gunners' => $department->getEmployees()));
     });
 
+    $app->get('/gunners/{id}', function($id) use ($app) {
+        $gunner = Employee::find($id);
+        return $app['twig']->render('battle_station_gunner.html.twig', array('gunners' => $gunner));
+    });
+
+    $app->patch('/gunners/{id}', function($id) use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = Employee::find($id);
+        $employee->updateName($name);
+        $employee->updateRank($rank);
+        $employee->updateSpecies($species);
+        $employee->updatePay($pay);
+        $employee->updateRecord($record);
+        return $app['twig']->render('battle_station_gunner.html.twig', array('gunners' => $employee));
+    });
+
     $app->post('/battle_station_troopers', function() use ($app) {
         $name = $_POST['name'];
         $rank = $_POST['rank'];
