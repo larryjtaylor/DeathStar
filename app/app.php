@@ -123,8 +123,24 @@
         return $app['twig']->render('battle_station_support.html.twig');
     });
 
+    $app->post('/battle_station_security', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(8);
+        $department->addEmployee($employee);
+
+        return $app['twig']->render('battle_station_security.html.twig', array('battle_station_securities' => $department->getEmployees()));
+    });
+
     $app->get('/battle_station_security', function() use ($app) {
-        return $app['twig']->render('battle_station_security.html.twig');
+        $department = Department::find(8);
+
+        return $app['twig']->render('battle_station_security.html.twig', array('battle_station_securities' => $department->getEmployees()));
     });
 
     $app->get('/imperial', function() use ($app) {
