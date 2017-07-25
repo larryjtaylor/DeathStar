@@ -23,6 +23,10 @@
             <input type="text" name="record" placeholder="Enter Record" required>
             <button type="submit" class="btn btn-success">Update Navy Pilot</button>
         </form>
+        <form action="/delete_navy_pilot/{{ navy_pilot.getId }}" method="post">
+            <input name="_method" type="hidden" value="delete">
+            <button type="submit">Delete Pilot</button>
+        </form>
         <a href="/">Home</a>
     </body>
 </html>

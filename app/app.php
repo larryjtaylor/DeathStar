@@ -68,6 +68,13 @@
         return $app['twig']->render('navy_officer.html.twig', array('navy_officer' => $employee));
     });
 
+    $app->delete('/delete_navy_officer/{id}', function($id) use ($app) {
+        $officer = Employee::find($id);
+        $officer->delete();
+        $department = Department::find(3);
+        return $app['twig']->render('navy.html.twig', array("navy_officers" => $department->getEmployees()));
+    });
+
     $app->post('/navy_pilots', function() use ($app) {
         $name = $_POST['name'];
         $rank = $_POST['rank'];
@@ -105,6 +112,13 @@
         $employee->updatePay($pay);
         $employee->updateRecord($record);
         return $app['twig']->render('navy_pilot.html.twig', array('navy_pilot' => $employee));
+    });
+
+    $app->delete('/delete_navy_pilot/{id}', function($id) use ($app) {
+        $pilot = Employee::find($id);
+        $pilot->delete();
+        $department = Department::find(10);
+        return $app['twig']->render('navy.html.twig', array("navy_pilots" => $department->getEmployees()));
     });
 
     $app->get('/battle_station', function() use ($app) {
