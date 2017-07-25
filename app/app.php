@@ -139,7 +139,6 @@
 
     $app->get('/battle_station_security', function() use ($app) {
         $department = Department::find(8);
-
         return $app['twig']->render('battle_station_security.html.twig', array('battle_station_securities' => $department->getEmployees()));
     });
 
