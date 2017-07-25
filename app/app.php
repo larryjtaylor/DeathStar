@@ -364,6 +364,13 @@
         return $app['twig']->render('battle_station_support_individual.html.twig', array('support' => $employee));
     });
 
+    $app->delete('/delete_battle_station_support/{id}', function($id) use ($app) {
+        $support = Employee::find($id);
+        $support->delete();
+        $department = Department::find(7);
+        return $app['twig']->render('battle_station.html.twig', array("battle_station_support" => $department->getEmployees()));
+    });
+
     $app->post('/battle_station_security', function() use ($app) {
         $name = $_POST['name'];
         $rank = $_POST['rank'];

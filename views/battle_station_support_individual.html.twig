@@ -23,6 +23,10 @@
             <input type="text" name="record" placeholder="Enter Record" required>
             <button type="submit" class="btn btn-success">Update Battle Station Support</button>
         </form>
+        <form action="/delete_battle_station_support/{{ support.getId }}" method="post">
+            <input name="_method" type="hidden" value="delete">
+            <button type="submit">Delete Support</button>
+        </form>
         <a href="/">Home</a>
     </body>
 </html>
