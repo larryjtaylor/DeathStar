@@ -68,6 +68,36 @@
             }
         }
 
+        function addEmployee($employee)
+        {
+            $executed = $GLOBALS['DB']->exec("INSERT INTO departments_employees (employee_id, department_id) VALUES ({$employee->getId()}, {$this->getId()});");
+            if ($executed) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        function getEmployees()
+        {
+            $returned_employees = $GLOBALS['DB']->query("SELECT employees.* FROM departments
+                JOIN departments_employees ON (departments_employees.department_id = departments.id)
+                JOIN employees ON (employees.id = departments_employees.employee_id)
+                WHERE departments.id = {$this->getId()};");
+            $employees = array();
+            foreach ($returned_employees as $employee) {
+                $employee_name = $employee['name'];
+                $employee_id = $employee['id'];
+                $rank = $employee['rank'];
+                $species = $employee['species'];
+                $pay = $employee['pay'];
+                $record = $employee['record'];
+                $new_employee = new Employee($employee_name, $rank, $species, $pay, $record, $employee_id);
+                array_push($employees, $new_employee);
+            }
+            return $employees;
+        }
+
         static function find($search_id)
         {
             $returned_departments = $GLOBALS['DB']->prepare("SELECT * FROM departments WHERE id = :id");

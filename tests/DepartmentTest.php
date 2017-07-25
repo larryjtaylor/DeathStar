@@ -231,5 +231,74 @@
             // Assert
             $this->assertEquals([$test_dept_2], Department::getAll());
         }
+
+        function testAddEmployee()
+        {
+            //Arrange
+            $name = "Chewy";
+            $rank = "Major";
+            $species = "Wookie";
+            $pay = 50;
+            $record = "Major failure";
+            $test_employee = new Employee($name, $rank, $species, $pay, $record);
+            $test_employee->save();
+
+            $dept_name = 'Becky';
+            $test_division = new Division($dept_name);
+            $test_division->save();
+            $division_id = $test_division->getId();
+
+            $dept_name = "Pilots";
+            $test_department = new Department($dept_name, $division_id);
+            $test_department->save();
+
+            $dept_name2 = "Pilots";
+            $test_department2 = new Department($dept_name2, $division_id);
+            $test_department2->save();
+
+            //Act
+            $test_department->addEmployee($test_employee);
+
+            //Assert
+            $this->assertEquals([$test_employee], $test_department->getEmployees());
+        }
+
+        function testGetEmployees()
+        {
+            $div_name = "Sample_testy";
+            $new_divison = new Division($div_name);
+            $new_divison->save();
+            $div_id = $new_divison->getId();
+
+            $dept_name = "Thingy";
+            $new_department = new Department($dept_name, $div_id);
+            $new_department->save();
+
+            $name = "Jimmy Joo";
+            $pay = 2000;
+            $rank = "God";
+            $record = "A bitch ass mufuckah";
+            $species = "Gorilla";
+            $new_employee = new Employee($name, $rank, $species, $pay, $record);
+            $new_employee->save();
+
+            $name1 = "Jimmy Jah";
+            $pay1 = 4000;
+            $rank1 = "Man";
+            $record1 = "A dope ass mufuckah";
+            $species1 = "Swangy";
+            $new_employee1 = new Employee($name1, $rank1, $species1, $pay1, $record1);
+            $new_employee1->save();
+
+            $new_department->addEmployee($new_employee);
+            $new_department->addEmployee($new_employee1);
+
+            $result = $new_department->getEmployees();
+
+            $this->assertEquals([$new_employee, $new_employee1], $result);
+
+
+
+        }
     }
 ?>
