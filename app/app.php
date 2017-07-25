@@ -55,17 +55,61 @@
         return $app['twig']->render('battle_station.html.twig');
     });
 
-    $app->get('/imperial', function() use ($app) {
-        return $app['twig']->render('imperial.html.twig');
+    $app->post('/stormtroopers', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(9);
+        $department->addEmployee($employee);
+        return $app['twig']->render('stormtroopers.html.twig', array('stormTroopers' => $department->getEmployees()));
+    });
+
+    $app->get('/stormtroopers', function() use ($app) {
+        $department = Department::find(9);
+        return $app['twig']->render('stormtroopers.html.twig', array('stormTroopers' => $department->getEmployees()));
+    });
+
+    $app->post('/army_officers', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(1);
+        $department->addEmployee($employee);
+        return $app['twig']->render('army_officers.html.twig', array('army_officers' => $department->getEmployees()));
     });
 
     $app->get('/army_officers', function() use ($app) {
-        return $app['twig']->render('army_officers.html.twig');
+        $department = Department::find(1);
+        return $app['twig']->render('army_officers.html.twig', array("army_officers" => $department->getEmployees()));
+    });
+
+    $app->post('/army_troopers', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(2);
+        $department->addEmployee($employee);
+
+        return $app['twig']->render('army_troopers.html.twig', array('army_troopers' => $department->getEmployees()));
     });
 
     $app->get('/army_troopers', function() use ($app) {
-        return $app['twig']->render('army_troopers.html.twig');
+        $department = Department::find(2);
+        return $app['twig']->render('army_troopers.html.twig', array('army_troopers' => $department->getEmployees()));
     });
+
 
     $app->get('/battle_station_gunners', function() use ($app) {
         return $app['twig']->render('battle_station_gunners.html.twig');
@@ -83,8 +127,8 @@
         return $app['twig']->render('battle_station_security.html.twig');
     });
 
-    $app->get('/stormtroopers', function() use ($app) {
-        return $app['twig']->render('stormtroopers.html.twig');
+    $app->get('/imperial', function() use ($app) {
+        return $app['twig']->render('imperial.html.twig');
     });
 
     return $app;

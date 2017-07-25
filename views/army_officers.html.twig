@@ -6,6 +6,24 @@
         <title>Death Star "HR" Portal</title>
     </head>
     <body>
-        
+        <form action="/army_officers" method="post">
+            <h3>Add Army Officer to Database</h3>
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="text" name="rank" placeholder="Enter Rank" required>
+            <input type="text" name="species" placeholder="Enter Species" required>
+            <input type="number" name="pay" placeholder="Enter Pay" required>
+            <input type="text" name="record" placeholder="Enter Record" required>
+            <button type="submit" class="btn btn-success">Add Army Officer</button>
+        </form>
+
+        {% if army_officers is not empty %}
+            <h3>Army Officers:</h3>
+            <ul>
+                {% for army_officer in army_officers %}
+                <li> {{ army_officer.getName }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+        <a href="/">Home</a>
     </body>
 </html>
