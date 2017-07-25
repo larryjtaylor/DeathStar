@@ -149,6 +149,13 @@
         return $app['twig']->render('stormtrooper.html.twig', array('stormtrooper' => $trooper));
     });
 
+    $app->delete('/delete_stormtrooper/{id}', function($id) use ($app) {
+        $trooper = Employee::find($id);
+        $trooper->delete();
+        $department = Department::find(9);
+        return $app['twig']->render('imperial.html.twig', array("stormtrooper" => $department->getEmployees()));
+    });
+
     $app->post('/army_officers', function() use ($app) {
         $name = $_POST['name'];
         $rank = $_POST['rank'];
@@ -231,6 +238,13 @@
         $trooper->updatePay($pay);
         $trooper->updateRecord($record);
         return $app['twig']->render('army_trooper.html.twig', array('army_trooper' => $trooper));
+    });
+
+    $app->delete('/delete_army_trooper/{id}', function($id) use ($app) {
+        $officer = Employee::find($id);
+        $officer->delete();
+        $department = Department::find(2);
+        return $app['twig']->render('army.html.twig', array("army_officers" => $department->getEmployees()));
     });
 
     $app->post('/gunners', function() use ($app) {
