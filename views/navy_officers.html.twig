@@ -15,5 +15,14 @@
             <input type="text" name="record" placeholder="Enter Record" required>
             <button type="submit" class="btn btn-success">Add Navy Officer</button>
         </form>
+
+        {% if navy_officers is not empty %}
+            <h3>Navy Officers:</h3>
+            <ul>
+                {% for navy_officer in navy_officers %}
+                <li> {{ navy_officer.getName }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
     </body>
 </html>

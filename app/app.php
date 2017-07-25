@@ -29,6 +29,28 @@
         return $app['twig']->render('navy.html.twig');
     });
 
+    $app->post('/navy_officers', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(3);
+        $department->addEmployee($employee);
+
+        return $app['twig']->render('navy_officers.html.twig', array('navy_officers' => $department->getEmployees()));
+    });
+
+    $app->get('/navy_officers', function() use ($app) {
+        return $app['twig']->render('navy_officers.html.twig');
+    });
+
+    $app->get('/navy_pilots', function() use ($app) {
+        return $app['twig']->render('navy_pilots.html.twig');
+    });
+
     $app->get('/battle_station', function() use ($app) {
         return $app['twig']->render('battle_station.html.twig');
     });
@@ -43,14 +65,6 @@
 
     $app->get('/army_troopers', function() use ($app) {
         return $app['twig']->render('army_troopers.html.twig');
-    });
-
-    $app->get('/navy_officers', function() use ($app) {
-        return $app['twig']->render('navy_officers.html.twig');
-    });
-
-    $app->get('/navy_pilots', function() use ($app) {
-        return $app['twig']->render('navy_pilots.html.twig');
     });
 
     $app->get('/battle_station_gunners', function() use ($app) {
