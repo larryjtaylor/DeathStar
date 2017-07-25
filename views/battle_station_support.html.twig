@@ -20,7 +20,7 @@
             <h3>Support:</h3>
             <ul>
                 {% for support in supports %}
-                <li> {{ support.getName }}</li>
+                <li><a href="battle_station_support/{{ support.getId }}">{{ support.getName }}</a></li>
                 {% endfor %}
             </ul>
         {% endif %}

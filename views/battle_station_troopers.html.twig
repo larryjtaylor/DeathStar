@@ -20,7 +20,7 @@
             <h3>Troopers:</h3>
             <ul>
                 {% for trooper in troopers %}
-                <li> {{ trooper.getName }}</li>
+                    <li><a href="battle_station_troopers/{{ trooper.getId }}">{{ trooper.getName }}</a></li>
                 {% endfor %}
             </ul>
         {% endif %}

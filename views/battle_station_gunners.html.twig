@@ -20,7 +20,7 @@
             <h3>Gunners:</h3>
             <ul>
                 {% for gunner in gunners %}
-                <li> {{ gunner.getName }}</li>
+                <li><a href="gunners/{{ gunner.getId }}">{{ gunner.getName }}</a></li>
                 {% endfor %}
             </ul>
         {% endif %}

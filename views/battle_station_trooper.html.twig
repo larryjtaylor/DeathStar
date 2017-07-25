@@ -6,25 +6,23 @@
         <title>Death Star "HR" Portal</title>
     </head>
     <body>
-        <form action="/navy_pilots" method="post">
-            <h3>Add Navy Pilot to Database</h3>
+        <h1>{{ troopers.getName }}</h1>
+        <ul>
+            <li>Rank: {{ troopers.getRank }}</li>
+            <li>Species: {{ troopers.getSpecies }}</li>
+            <li>Pay: {{ troopers.getPay }} Galactic Credits</li>
+            <li>Record: {{troopers.getRecord }}</li>
+        </ul>
+        <h3> Update Battle Station Trooper</h3>
+        <form action="/battle_station_troopers/{{ troopers.getId }}" method="post">
+            <input name="_method" type="hidden" value="patch">
             <input type="text" name="name" placeholder="Enter Name" required>
             <input type="text" name="rank" placeholder="Enter Rank" required>
             <input type="text" name="species" placeholder="Enter Species" required>
             <input type="number" name="pay" placeholder="Enter Pay" required>
             <input type="text" name="record" placeholder="Enter Record" required>
-            <button type="submit" class="btn btn-success">Add Navy Pilot</button>
+            <button type="submit" class="btn btn-success">Update Battle Station Trooper</button>
         </form>
-
-        {% if navy_pilots is not empty %}
-            <h3>Navy Pilots:</h3>
-            <ul>
-                {% for navy_pilot in navy_pilots %}
-                <li><a href="navy_pilot/{{ navy_pilot.getId }}">{{ navy_pilot.getName }}</a></li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-
         <a href="/">Home</a>
     </body>
 </html>

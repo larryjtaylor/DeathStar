@@ -20,7 +20,7 @@
             <h3>Navy Officers:</h3>
             <ul>
                 {% for navy_officer in navy_officers %}
-                <li> {{ navy_officer.getName }}</li>
+                <li><a href="navy_officer/{{ navy_officer.getId }}">{{ navy_officer.getName }}</a></li>
                 {% endfor %}
             </ul>
         {% endif %}

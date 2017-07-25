@@ -20,7 +20,7 @@
             <h3>Army Troopers:</h3>
             <ul>
                 {% for battle_station_security in battle_station_securities %}
-                <li> {{ battle_station_security.getName }}</li>
+            <li><a href="battle_station_security/{{ battle_station_security.getId }}">{{ battle_station_security.getName }}</a></li>
                 {% endfor %}
             </ul>
         {% endif %}
