@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css" media="screen" type="text/css">
+        <title>Death Star "HR" Portal</title>
+    </head>
+    <body>
+        <form action="/navy_pilots" method="post">
+            <h3>Add Navy Pilot to Database</h3>
+            <input type="text" name="name" placeholder="Enter Name" required>
+            <input type="text" name="rank" placeholder="Enter Rank" required>
+            <input type="text" name="species" placeholder="Enter Species" required>
+            <input type="number" name="pay" placeholder="Enter Pay" required>
+            <input type="text" name="record" placeholder="Enter Record" required>
+            <button type="submit" class="btn btn-success">Add Navy Pilot</button>
+        </form>
+
+        {% if navy_pilots is not empty %}
+            <h3>Navy Pilots:</h3>
+            <ul>
+                {% for navy_pilot in navy_pilots %}
+                <li> {{ navy_pilot.getName }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <a href="/">Home</a>
+    </body>
+</html>

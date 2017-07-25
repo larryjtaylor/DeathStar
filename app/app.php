@@ -47,6 +47,20 @@
         return $app['twig']->render('navy_officers.html.twig');
     });
 
+    $app->post('/navy_pilots', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(10);
+        $department->addEmployee($employee);
+
+        return $app['twig']->render('navy_pilots.html.twig', array('navy_pilots' => $department->getEmployees()));
+    });
+
     $app->get('/navy_pilots', function() use ($app) {
         return $app['twig']->render('navy_pilots.html.twig');
     });
