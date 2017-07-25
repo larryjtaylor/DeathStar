@@ -2,6 +2,7 @@ body {
 background: linear-gradient( rgba(0, 0, 0, .85), rgba(0, 0, 0, .85) ), url("/img/lightwall.jpg");
 background-repeat: repeat;
 background-size: 60%;
+color: red;
 }
 
 .jumbotron {

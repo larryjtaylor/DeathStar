@@ -107,6 +107,26 @@
         return $app['twig']->render('army_officers.html.twig', array("army_officers" => $department->getEmployees()));
     });
 
+    $app->get('/army_officer/{id}', function($id) use ($app) {
+        $officer = Employee::find($id);
+        return $app['twig']->render('army_officer.html.twig', array('army_officer' => $officer));
+    });
+
+    $app->patch('/army_officer/{id}', function($id) use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = Employee::find($id);
+        $employee->updateName($name);
+        $employee->updateRank($rank);
+        $employee->updateSpecies($species);
+        $employee->updatePay($pay);
+        $employee->updateRecord($record);
+        return $app['twig']->render('army_officer.html.twig', array('army_officer' => $employee));
+    });
+
     $app->post('/army_troopers', function() use ($app) {
         $name = $_POST['name'];
         $rank = $_POST['rank'];

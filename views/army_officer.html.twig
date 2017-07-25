@@ -6,24 +6,23 @@
         <title>Death Star "HR" Portal</title>
     </head>
     <body>
-        <form action="/army_officers" method="post">
-            <h3>Add Army Officer to Database</h3>
+        <h1>{{ army_officer.getName }}</h1>
+        <ul>
+            <li>Rank: {{ army_officer.getRank }}</li>
+            <li>Species: {{ army_officer.getSpecies }}</li>
+            <li>Pay: {{ army_officer.getPay }} Galactic Credits</li>
+            <li>Record: {{army_officer.getRecord }}</li>
+        </ul>
+        <h3> Update Army Officer</h3>
+        <form action="/army_officer/{{ army_officer.getId }}" method="post">
+            <input name="_method" type="hidden" value="patch">
             <input type="text" name="name" placeholder="Enter Name" required>
             <input type="text" name="rank" placeholder="Enter Rank" required>
             <input type="text" name="species" placeholder="Enter Species" required>
             <input type="number" name="pay" placeholder="Enter Pay" required>
             <input type="text" name="record" placeholder="Enter Record" required>
-            <button type="submit" class="btn btn-success">Add Army Officer</button>
+            <button type="submit" class="btn btn-success">Update Army Officer</button>
         </form>
-
-        {% if army_officers is not empty %}
-            <h3>Army Officers:</h3>
-            <ul>
-                {% for army_officer in army_officers %}
-                <li><a href="army_officer/{{ army_officer.getId }}">{{ army_officer.getName }}</a></li>
-                {% endfor %}
-            </ul>
-        {% endif %}
         <a href="/">Home</a>
     </body>
 </html>
