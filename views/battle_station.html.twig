@@ -3,14 +3,66 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/styles.css" media="screen" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Orbitron|Passion+One" rel="stylesheet">
         <title>Death Star "HR" Portal</title>
     </head>
     <body>
-        <!-- Ops Chief hard-coded here -->
-        <a href="/gunners">View or Add Battle Station Gunners</a>
-        <a href="/battle_station_troopers">View or Add Battle Station Troopers</a>
-        <a href="/battle_station_support">View or Add Battle Station Support</a>
-        <a href="/battle_station_security">View or Add Battle Station Security</a>
-        <a href="/">Home</a>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/img/Dstarholo.jpg" alt="Death Star Hologram" class="holo"/>
+                </div>
+                <div class="col-md-8">
+                    <h1 class="pageHeader"><em>Imperial Army Personnel</em></h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="opsChiefs">Ops Chief</h1>
+                    <img src="/img/SiwardCass.png" alt="Siward Cass" id="cass"/>
+                </div>
+                <div class="col-md-6">
+                    <div class="well well-default chiefWell">
+                        <h1>Chief Siward Cass</h1>
+                        <h3>Rank: Colonel</h3>
+                        <h3>Role on Death Star: Chief Communications Officer</h3>
+                        <h3>Species: Human</h3>
+                        <h3>Pay Rate: <img src="/img/credit.png" alt="Galactic Credit Symbol" class="credit"/>597,000 per year </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="opsChiefs">Ops Chief</h1>
+                    <img src="/img/romodi.jpg" alt="Hurst Romodi" id="romodi"/>
+                </div>
+                <div class="col-md-6">
+                    <div class="well well-default chiefWell">
+                        <h1>Chief Hurst Romodi</h1>
+                        <h3>Rank: Imperial General</h3>
+                        <h3>Role on Death Star: Battle Station Operations Chief</h3>
+                        <h3>Species: Human</h3>
+                        <h3>Pay Rate: <img src="/img/credit.png" alt="Galactic Credit Symbol" class="credit"/>1,327,000 per year </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row addPeople">
+                <div class="col-md-3">
+                    <a href="/gunners"><h2>View or Add Battle Station Gunners</h2></a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/battle_station_troopers"><h2>View or Add Battle Station Troopers</h2></a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/battle_station_security"><h2>View or Add Battle Station Security</h2></a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/battle_station_support"><h2>View or Add Battle Station Support</h2></a>
+                </div>
+            </div>
+        </div>
+        <a href="/" class="goHome"><h1>Home</h1></a>
     </body>
 </html>

@@ -3,14 +3,45 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/styles.css" media="screen" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Orbitron|Passion+One" rel="stylesheet">
         <title>Death Star "HR" Portal</title>
     </head>
     <body>
-        <div class="container">
-            <h1>Ops Chief</h1>
-            <!-- Ops Chief hard-coded here -->
-            <a href="/army_officers">View or Add Army Officers</a><br>
-            <a href="/army_troopers">View or Add Army Troopers</a>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/img/Dstarholo.jpg" alt="Death Star Hologram" class="holo"/>
+                </div>
+                <div class="col-md-8">
+                    <h1 class="pageHeader"><em>Imperial Army Personnel</em></h1>
+                </div>
+            </div>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1 class="opsChiefs">Ops Chief</h1>
+                    <img src="/img/MoradimBast.png" alt="Moradmin Bast" id="bast"/>
+                </div>
+                <div class="col-md-6">
+                    <div class="well well-default chiefWell">
+                        <h1>Chief Moradmin Bast</h1>
+                        <h3>Rank: Imperial General</h3>
+                        <h3>Role on Death Star: Army Operations Chief</h3>
+                        <h3>Species: Human</h3>
+                        <h3>Pay Rate: <img src="/img/credit.png" alt="Galactic Credit Symbol" class="credit"/>674,000 per year </h3>
+                    </div>
+                </div>
+            </div>
+            <div class="row addPeople">
+                <div class="col-md-6">
+                    <a href="/army_officers"><h2>View or Add Army Officers</h2></a>
+                </div>
+                <div class="col-md-6">
+                    <a href="/army_troopers"><h2>View or Add Army Troopers</h2></a>
+                </div>
+            </div>
+        </div>
+        <a href="/" class="goHome"><h1>Home</h1></a>
     </body>
 </html>

@@ -5,12 +5,13 @@ background-size: 60%;
 color: red;
 }
 
-.jumbotron {
-     background-image: url("/img/stars.jpg");
-     background-repeat: repeat;
-     background-size: 50%;
-     height: 1300px;
+.jumbotron#indexStars {
+    background-image: url("/img/stars.jpg");
+    background-repeat: repeat;
+    background-size: 50%;
+    height: 1300px;
  }
+
 
  #longTime {
     color: #097AFB;
@@ -21,7 +22,6 @@ color: red;
     transform: translate(-50%);
     text-shadow: gray 2px 2px;
 }
-
 
 #deathStar {
     height: 950px;
@@ -68,13 +68,13 @@ color: red;
 }
 
 #army {
-  position: absolute;
+  position: relative;
   height: 350px;
   width: 300px;
-  left: 10%;
-  transform: translate(-10%);
+  /*left: -90%;
+  transform: translate(90%);*/
   border-radius: 10%;
-  margin-top: 4%;
+  margin-top: 2%;
   border: white 1px solid;
 }
 
@@ -82,8 +82,8 @@ color: red;
   position: absolute;
   height: 350px;
   width: 300px;
-  left: 170%;
-  transform: translate(-170%);
+  left: 90%;
+  transform: translate(-90%);
   border-radius: 10%;
   margin-top: 4%;
   border: white 1px solid;
@@ -93,8 +93,8 @@ color: red;
   position: absolute;
   height: 350px;
   width: 300px;
-  left: 10%;
-  transform: translate(-10%);
+  /*left: 10%;
+  transform: translate(-10%);*/
   border-radius: 10%;
   bottom: 100%;
   border: white 1px solid;
@@ -104,8 +104,8 @@ color: red;
   position: absolute;
   height: 350px;
   width: 300px;
-  left: 50%;
-  transform: translate(-50%);
+  left: 83%;
+  transform: translate(-83%);
   border-radius: 10%;
   bottom: 100%;
   border: white 1px solid;
@@ -115,4 +115,67 @@ audio {
     display: none;
     position: absolute;
     top: 200%;
+}
+
+.jumbotron {
+    background-color: black;
+    /*color: white;*/
+    border-bottom: white solid;
+    color: #feda4a;
+    font-family: 'Alfa Slab One', cursive;
+    padding-bottom: 0;
+}
+
+.pageHeader {
+    padding-top: 100px;
+    padding-right: 15px;
+}
+
+.holo {
+    margin-left: 30px;
+    height: 300px;
+    width: 500px;
+}
+
+.opsChiefs {
+    font-family: 'Orbitron', sans-serif;
+    color: #feda4a;
+    font-size: 48px;
+}
+
+#bast {
+    width: 100%
+}
+
+.credit {
+    height: 25px;
+    width: 25px;
+}
+
+.chiefWell {
+    margin-top: 120px;
+}
+
+.addPeople {
+    text-align: center;
+}
+
+.goHome {
+    text-align: center;
+}
+
+#yularen {
+    margin-top: 30px;
+    height: 350px;
+    width: 450px;
+}
+
+#cass {
+    height: 400px;
+    width: 350px;
+}
+
+#romodi {
+    height: 450px;
+    width: 350px;
 }
