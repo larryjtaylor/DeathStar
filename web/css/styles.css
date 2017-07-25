@@ -2,7 +2,6 @@ body {
 background: linear-gradient( rgba(0, 0, 0, .85), rgba(0, 0, 0, .85) ), url("/img/lightwall.jpg");
 background-repeat: repeat;
 background-size: 60%;
-color: red;
 }
 
 .jumbotron#indexStars {
@@ -154,6 +153,7 @@ audio {
 
 .chiefWell {
     margin-top: 120px;
+    background-color: #C3C2C2;
 }
 
 .addPeople {
@@ -178,4 +178,16 @@ audio {
 #romodi {
     height: 450px;
     width: 350px;
+}
+
+.addCategories {
+    color: white;
+}
+
+#armyOfficer {
+    margin-top: 100px;
+}
+
+#Home {
+    text-align: center;
 }
