@@ -4,12 +4,13 @@ background-repeat: repeat;
 background-size: 60%;
 }
 
-.jumbotron {
-     background-image: url("/img/stars.jpg");
-     background-repeat: repeat;
-     background-size: 50%;
-     height: 1300px;
+.jumbotron#indexStars {
+    background-image: url("/img/stars.jpg");
+    background-repeat: repeat;
+    background-size: 50%;
+    height: 1300px;
  }
+
 
  #longTime {
     color: #097AFB;
@@ -20,7 +21,6 @@ background-size: 60%;
     transform: translate(-50%);
     text-shadow: gray 2px 2px;
 }
-
 
 #deathStar {
     height: 950px;
@@ -114,4 +114,47 @@ audio {
     display: none;
     position: absolute;
     top: 200%;
+}
+
+.jumbotron {
+    background-color: black;
+    /*color: white;*/
+    border-bottom: white solid;
+    color: #feda4a;
+    font-family: 'Alfa Slab One', cursive;
+    padding-bottom: 0;
+}
+
+.pageHeader {
+    padding-top: 100px;
+    padding-right: 15px;
+}
+
+#holo {
+    margin-left: 30px;
+    height: 300px;
+    width: 500px;
+}
+
+.opsChiefs {
+    font-family: 'Orbitron', sans-serif;
+    color: #feda4a;
+    font-size: 48px;
+}
+
+#bast {
+    width: 100%
+}
+
+.credit {
+    height: 25px;
+    width: 25px;
+}
+
+.chiefWell {
+    margin-top: 120px;
+}
+
+#addSoldiers {
+    text-align: center;
 }
