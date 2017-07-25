@@ -102,8 +102,23 @@
         return $app['twig']->render('battle_station_gunners.html.twig', array('gunners' => $department->getEmployees()));
     });
 
+    $app->post('/battle_station_troopers', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(6);
+        $department->addEmployee($employee);
+
+        return $app['twig']->render('battle_station_troopers.html.twig', array('troopers' => $department->getEmployees()));
+    });
+
     $app->get('/battle_station_troopers', function() use ($app) {
-        return $app['twig']->render('battle_station_troopers.html.twig');
+        $department = Department::find(6);
+        return $app['twig']->render('battle_station_troopers.html.twig', array('troopers' => $department->getEmployees()));
     });
 
     $app->get('/battle_station_support', function() use ($app) {
