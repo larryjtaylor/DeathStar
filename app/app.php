@@ -48,6 +48,26 @@
         return $app['twig']->render('navy_officers.html.twig', array('navy_officers' => $department->getEmployees()));
     });
 
+    $app->get('/navy_officer/{id}', function($id) use ($app) {
+        $officer = Employee::find($id);
+        return $app['twig']->render('navy_officer.html.twig', array('navy_officer' => $officer));
+    });
+
+    $app->patch('/navy_officer/{id}', function($id) use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = Employee::find($id);
+        $employee->updateName($name);
+        $employee->updateRank($rank);
+        $employee->updateSpecies($species);
+        $employee->updatePay($pay);
+        $employee->updateRecord($record);
+        return $app['twig']->render('navy_officer.html.twig', array('navy_officer' => $employee));
+    });
+
     $app->post('/navy_pilots', function() use ($app) {
         $name = $_POST['name'];
         $rank = $_POST['rank'];
