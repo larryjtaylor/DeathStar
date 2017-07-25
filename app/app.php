@@ -33,8 +33,8 @@
         return $app['twig']->render('battle_station.html.twig');
     });
 
-    $app->get('/vader', function() use ($app) {
-        return $app['twig']->render('vader.html.twig');
+    $app->get('/imperial', function() use ($app) {
+        return $app['twig']->render('imperial.html.twig');
     });
 
     $app->get('/army_officers', function() use ($app) {
