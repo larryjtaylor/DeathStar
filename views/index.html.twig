@@ -3,16 +3,53 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/styles.css" media="screen" type="text/css">
+
+
         <title>Death Star "HR" Portal</title>
     </head>
     <body>
         <div class="jumbotron">
         </div>
-        <img src="/img/dstar.png" alt="Death Star" id="deathStar" />
-        <a href="/army" class="buttons">View Army "Personnel"</a>
-        <a href="/navy" class="buttons">View Navy "Personnel"</a>
-        <a href="/battle_station" class="buttons">View Battle Station "Personnel"</a>
-        <a href="/imperial" class="buttons">View Imperial "Personnel"</a>
+        <div class="container">
+            <img src="/img/dstar.png" alt="Death Star" id="deathStar" />
 
+            <div class="row" id="longTime">
+                <h1>A long, long time ago...</h1>
+                <h1>In an office space far, far away...</h1>
+            </div>
+            <div class="row" id="topLabels">
+                <div class="col-md-4">
+                    <img src="/img/CassioTagge.png" alt="Army trooper" id="army"/>
+                    <a href="/army" class="buttons"><h3>View Army 'Personnel'</h3></a>
+                    <p>Under the command of Grand General Cassio Tagge, Chief of the Imperial Army
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <img src="/img/Tarkin.png" alt="Death Star gunner" id="tarkin"/>
+                    <a href="/battle_station" class="buttons"><h3>View Battle Station 'Personnel'</h3></a>
+                    <p>Under the command of Wilhuff Tarkin, Grand Moff and regional Governor of the Outer Rim.</p>
+                </div>
+            </div>
+            <div class="row" id="bottomLabels">
+                <div class="col-md-4">
+                    <img src="/img/Motti.png" alt="Fighter Pilot" id="navy" />
+                    <a href="/navy" class="buttons"><h3>View Navy 'Personnel'</h3></a>
+                    <p>Under the command of Admiral Antonio Motti, Chief of the Imperial Navy</p>
+                </div>
+                <div class="col-md-4">
+                </div>
+                <div class="col-md-4">
+                    <img src="/img/Vader.png" alt="Darth Vader" id="vader" />
+                    <a href="/vader" class="buttons"><h3>View Imperial 'Personnel'</h3></a>
+                    <p>Under the command of Darth Vader, Dark Lord of the Sith and Supreme Commander of the Imperial Forces</p>
+                </div>
+            </div>
+            <h1 id='pageHeader'><b><em>DEATH STAR HR</em></b></h1>
+            <img src="/img/emperor.png" alt="Emporer Palpatine" id="emperor"/>
+            <audio controls autoplay id="music">
+              <source src="/../css/march.mp3" type="audio/mpeg">
+            </audio>
+        </div>
     </body>
 </html>

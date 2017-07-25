@@ -44,11 +44,27 @@
     });
 
     $app->get('/navy_officers', function() use ($app) {
-        return $app['twig']->render('navy_officers.html.twig');
+        $department = Department::find(3);
+        return $app['twig']->render('navy_officers.html.twig', array('navy_officers' => $department->getEmployees()));
+    });
+
+    $app->post('/navy_pilots', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(10);
+        $department->addEmployee($employee);
+
+        return $app['twig']->render('navy_pilots.html.twig', array('navy_pilots' => $department->getEmployees()));
     });
 
     $app->get('/navy_pilots', function() use ($app) {
-        return $app['twig']->render('navy_pilots.html.twig');
+        $department = Department::find(10);
+        return $app['twig']->render('navy_pilots.html.twig', array('navy_pilots' => $department->getEmployees()));
     });
 
     $app->get('/battle_station', function() use ($app) {
@@ -110,17 +126,61 @@
         return $app['twig']->render('army_troopers.html.twig', array('army_troopers' => $department->getEmployees()));
     });
 
+    $app->post('/gunners', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(5);
+        $department->addEmployee($employee);
 
-    $app->get('/battle_station_gunners', function() use ($app) {
-        return $app['twig']->render('battle_station_gunners.html.twig');
+        return $app['twig']->render('battle_station_gunners.html.twig', array('gunners' => $department->getEmployees()));
+    });
+
+    $app->get('/gunners', function() use ($app) {
+        $department = Department::find(5);
+        return $app['twig']->render('battle_station_gunners.html.twig', array('gunners' => $department->getEmployees()));
+    });
+
+    $app->post('/battle_station_troopers', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(6);
+        $department->addEmployee($employee);
+
+        return $app['twig']->render('battle_station_troopers.html.twig', array('troopers' => $department->getEmployees()));
     });
 
     $app->get('/battle_station_troopers', function() use ($app) {
-        return $app['twig']->render('battle_station_troopers.html.twig');
+        $department = Department::find(6);
+        return $app['twig']->render('battle_station_troopers.html.twig', array('troopers' => $department->getEmployees()));
+    });
+
+    $app->post('/battle_station_support', function() use ($app) {
+        $name = $_POST['name'];
+        $rank = $_POST['rank'];
+        $species = $_POST['species'];
+        $pay = $_POST['pay'];
+        $record = $_POST['record'];
+        $employee = new Employee($name, $rank, $species, $pay, $record);
+        $employee->save();
+        $department = Department::find(7);
+        $department->addEmployee($employee);
+
+        return $app['twig']->render('battle_station_support.html.twig', array('supports' => $department->getEmployees()));
     });
 
     $app->get('/battle_station_support', function() use ($app) {
-        return $app['twig']->render('battle_station_support.html.twig');
+        $department = Department::find(7);
+        return $app['twig']->render('battle_station_support.html.twig', array('supports' => $department->getEmployees()));
     });
 
     $app->post('/battle_station_security', function() use ($app) {

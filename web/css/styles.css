@@ -1,23 +1,117 @@
-@font-face {
-    font-family: 'StarWars'; /*a name to be used later*/
-    src: url('http://domain.com/fonts/font.ttf'); /*URL to font*/
+body {
+background: linear-gradient( rgba(0, 0, 0, .85), rgba(0, 0, 0, .85) ), url("/img/lightwall.jpg");
+background-repeat: repeat;
+background-size: 60%;
 }
+
 .jumbotron {
      background-image: url("/img/stars.jpg");
      background-repeat: repeat;
      background-size: 50%;
-     height: 1400px;
+     height: 1300px;
  }
 
+ #longTime {
+    color: #097AFB;
+    position: absolute;
+    font-size: 48px;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%);
+    text-shadow: gray 2px 2px;
+}
+
+
 #deathStar {
-    border: 1px black;
-    width: 75%;
+    height: 950px;
+    width: 900px;
     position: fixed;
-    left: 13%;
+    left: 50%;
+    transform: translate(-50%);
     top: 10%;
 }
 
-.button {
-    margin-top: 250%;
-    font-family:
+#pageHeader {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 100%;
+  font-size: 66px;
+  color: #feda4a;
+}
+
+.buttons {
+    color: #feda4a;
+}
+
+#topLabels {
+    color: #feda4a;
+    width: 100%;
+}
+
+#bottomLabels {
+    position: absolute;
+    color: #feda4a;
+    width: 100%;
+    top: 190%;
+}
+
+#emperor {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  top: 130%;
+  height: 450;
+  width: 400px;
+  border-radius: 20%
+}
+
+#army {
+  position: absolute;
+  height: 350px;
+  width: 300px;
+  left: 10%;
+  transform: translate(-10%);
+  border-radius: 10%;
+  margin-top: 4%;
+  border: white 1px solid;
+}
+
+#tarkin {
+  position: absolute;
+  height: 350px;
+  width: 300px;
+  left: 170%;
+  transform: translate(-170%);
+  border-radius: 10%;
+  margin-top: 4%;
+  border: white 1px solid;
+}
+
+#navy {
+  position: absolute;
+  height: 350px;
+  width: 300px;
+  left: 10%;
+  transform: translate(-10%);
+  border-radius: 10%;
+  bottom: 100%;
+  border: white 1px solid;
+}
+
+#vader {
+  position: absolute;
+  height: 350px;
+  width: 300px;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 10%;
+  bottom: 100%;
+  border: white 1px solid;
+}
+
+audio {
+    display: none;
+    position: absolute;
+    top: 200%;
 }
