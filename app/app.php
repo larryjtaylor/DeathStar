@@ -286,6 +286,13 @@
         return $app['twig']->render('battle_station_gunner.html.twig', array('gunners' => $employee));
     });
 
+    $app->delete('/delete_battle_station_gunner/{id}', function($id) use ($app) {
+        $gunner = Employee::find($id);
+        $gunner->delete();
+        $department = Department::find(5);
+        return $app['twig']->render('battle_station.html.twig');
+    });
+
     $app->post('/battle_station_troopers', function() use ($app) {
         $name = $_POST['name'];
         $rank = $_POST['rank'];
