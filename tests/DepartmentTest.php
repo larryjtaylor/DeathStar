@@ -295,7 +295,7 @@
 
             $result = $new_department->getEmployees();
 
-            $this->assertEquals([$new_employee, $new_employee1], $result);
+            $this->assertEquals([$new_employee1, $new_employee], $result);
 
 
 

@@ -86,7 +86,7 @@ class Employee
 
     static function getAll()
     {
-        $returned_employees = $GLOBALS['DB']->query("SELECT * FROM employees;");
+        $returned_employees = $GLOBALS['DB']->query("SELECT * FROM employees ORDER BY name ASC;");
         $employees = array();
         foreach($returned_employees as $employee) {
             $name = $employee['name'];
