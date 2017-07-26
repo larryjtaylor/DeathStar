@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css" media="screen" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Orbitron|Passion+One" rel="stylesheet">
+    <title>Death Star "HR" Portal</title>
+</head>
+  <body id="employees">
+    <h3>Here are all the employees working in the Galactic Empire:</h3>
+    <ul>
+      {% for employee in employees %}
+          <li> {{ employee.getName }} </li>
+          {% for department in employee.getDepartments %}
+          <p> Department: {{ department.getDeptName }} </p>
+          {% endfor %}
+      {% endfor %}
+    <ul>
+  </body>
+</html>

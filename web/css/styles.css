@@ -4,6 +4,9 @@ background-repeat: repeat;
 background-size: 60%;
 }
 
+#employees {
+  color: white;
+}
 .jumbotron#indexStars {
     background-image: url("/img/stars.jpg");
     background-repeat: repeat;
