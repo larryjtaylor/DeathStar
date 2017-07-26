@@ -25,7 +25,7 @@
         </form>
 
         <form action='/add_depts' method='post'>
-            <input id="employee_id" name="employee_id" type="hidden" value="{{ employee.getId }}">
+            <input id="army_officer_id" name="army_officer_id" type="hidden" value="{{ army_officer.getId }}">
             <label for="dept_id">Select a dept:</label>
             <select id='dept_id' name='dept_id' type='text'>
                 {% for department in all_departments %}
