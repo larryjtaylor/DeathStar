@@ -13,6 +13,11 @@ background-size: 60%;
     color: white;
 }
 
+.container {
+    display: flex;
+    width: 1000px;
+}
+
 .jumbotron#indexStars {
     background-image: url("/img/stars.jpg");
     background-repeat: repeat;
@@ -48,12 +53,20 @@ background-size: 60%;
   color: #feda4a;
 }
 
+#seeEmp {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 120%;
+}
+
 #joinUs {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    top: 110%;
+    top: 180%;
 }
+
 .buttons {
     color: #feda4a;
 }
