@@ -20,7 +20,6 @@ background-size: 60%;
     height: 1300px;
  }
 
-
  #longTime {
     color: #097AFB;
     position: absolute;
@@ -49,6 +48,12 @@ background-size: 60%;
   color: #feda4a;
 }
 
+#joinUs {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 110%;
+}
 .buttons {
     color: #feda4a;
 }
@@ -213,6 +218,10 @@ audio {
   margin-bottom: 20px;
 }
 
+.addDept {
+    margin-top: 20px;
+}
+
 #armyTroopers {
   width: 100%;
   margin-top: 100px;
@@ -255,8 +264,8 @@ audio {
 
 #stormtroopers{
   margin-top: 100px;
-  width: 400px;
-  height: 500px;
+  width: 350px;
+  height: 450px;
 }
 
 #logo {
@@ -268,7 +277,11 @@ audio {
 #lunch {
   margin-top: 100px;
   height: 600px;
-  width: 400px;
+  width: 600px;
+}
+
+#stormHome {
+    padding-left: 270px;
 }
 
 .indivInfo {
