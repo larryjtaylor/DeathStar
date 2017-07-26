@@ -10,8 +10,15 @@
     $password = 'root';
     $DB = new PDO($server, $username, $password);
 
+    use Symfony\Component\Debug\Debug;
+    Debug::enable();
+
+    // Initialize application
     $app = new Silex\Application();
 
+    // Set Silex debug mode in $app object
+    $app['debug'] = true;
+    
     use Symfony\Component\HttpFoundation\Request;
     Request::enableHttpMethodParameterOverride();
 
