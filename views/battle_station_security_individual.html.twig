@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,5 +28,63 @@
             <button type="submit">Delete Security</button>
         </form>
         <a href="/">Home</a>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css" media="screen" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Orbitron|Passion+One" rel="stylesheet">
+        <title>Death Star "HR" Portal</title>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/img/Dstarholo.jpg" alt="Death Star Hologram" class="holo"/>
+                </div>
+                <div class="col-md-8">
+                    <h1 class="pageHeader"><em>Battle Station Personnel</em></h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h1 class="listTitle">{{ battle_station_security.getName }}</h1>
+                    <ul class="indivInfo">
+                        <li>Rank: {{ battle_station_security.getRank }}</li>
+                        <li>Species: {{ battle_station_security.getSpecies }}</li>
+                        <li>Pay: {{ battle_station_security.getPay }} Galactic Credits</li>
+                        <li>Record: {{battle_station_security.getRecord }}</li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <img src="/img/guards.jpg" alt="Death Star Security guards" id="guard"/>
+                    <div class="indivHome">
+                        <a href="/"><h2>Home</h2></a>
+                        <a href="/battle_station_security"><h2>Back</h2></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="opsChiefs"> Update Battle Station Security Personnel</h3>
+                    <form action="/battle_station_battle_station_security/{{ battle_station_security.getId }}" method="post" class="updateInputs">
+                        <input name="_method" type="hidden" value="patch"><br><br>
+                        <input type="text" name="name" placeholder="Enter Name" required><br><br>
+                        <input type="text" name="rank" placeholder="Enter Rank" required><br><br>
+                        <input type="text" name="species" placeholder="Enter Species" required><br><br>
+                        <input type="number" name="pay" placeholder="Enter Pay" required><br><br>
+                        <input type="text" name="record" placeholder="Enter Record" required><br><br>
+                        <button type="submit" class="btn btn-success">Update </button>
+                    </form><br>
+                    <form action="/delete_battle_station_security/{{ battle_station_security.getId }}" method="post">
+                        <input name="_method" type="hidden" value="delete">
+                        <button type="submit" class="btn btn-danger">Delete </button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

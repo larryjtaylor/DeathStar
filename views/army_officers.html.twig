@@ -42,7 +42,7 @@
                 <div class="col-md-4">
                     <h3 class="opsChiefs">Currently Saved Officers :</h3>
                     {% if army_officers is not empty %}
-                    <h3>Army Officers:</h3>
+                    <h3 class="listTitle">Army Officers:</h3>
                     <ul>
                         {% for army_officer in army_officers %}
                         <li><a href="army_officer/{{ army_officer.getId }}">{{ army_officer.getName }}</a></li>
@@ -52,6 +52,9 @@
                 </div>
             </div>
         </div>
-        <a href="/"><h2 id="Home">Home</h2></a>
+        <div class="Home">
+            <a href="/"><h2>Home</h2></a>
+            <a href="/army"><h2>Back</h2></a>
+        </div>
     </body>
 </html>

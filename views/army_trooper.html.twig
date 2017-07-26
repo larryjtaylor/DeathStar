@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,5 +28,63 @@
             <button type="submit">Delete Trooper</button>
         </form>
         <a href="/">Home</a>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css" media="screen" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Orbitron|Passion+One" rel="stylesheet">
+        <title>Death Star "HR" Portal</title>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/img/Dstarholo.jpg" alt="Death Star Hologram" class="holo"/>
+                </div>
+                <div class="col-md-8">
+                    <h1 class="pageHeader"><em>Imperial Army Personnel</em></h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h1 class="listTitle">{{ army_trooper.getName }}</h1>
+                    <ul class="indivInfo">
+                        <li>Rank: {{ army_trooper.getRank }}</li>
+                        <li>Species: {{ army_trooper.getSpecies }}</li>
+                        <li>Pay: {{ army_trooper.getPay }} Galactic Credits</li>
+                        <li>Record: {{army_trooper.getRecord }}</li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <img src="/img/boba.jpg" alt="Boba Moon" id="boba"/>
+                    <div id="armyHome">
+                        <a href="/"><h2>Home</h2></a>
+                        <a href="/army_troopers"><h2>Back</h2></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="opsChiefs"> Update Army Trooper</h3>
+                    <form action="/army_trooper/{{ army_trooper.getId }}" method="post"class="updateInputs">
+                        <input name="_method" type="hidden" value="patch"><br><br>
+                        <input type="text" name="name" placeholder="Enter Name" required><br><br>
+                        <input type="text" name="rank" placeholder="Enter Rank" required><br><br>
+                        <input type="text" name="species" placeholder="Enter Species" required><br><br>
+                        <input type="number" name="pay" placeholder="Enter Pay" required><br><br>
+                        <input type="text" name="record" placeholder="Enter Record" required><br><br>
+                        <button type="submit" class="btn btn-success">Update Army Trooper</button>
+                    </form><br>
+                    <form action="/delete_army_trooper/{{ army_trooper.getId }}" method="post">
+                        <input name="_method" type="hidden" value="delete">
+                        <button type="submit" class="btn btn-danger">Delete Trooper</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
