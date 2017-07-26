@@ -157,7 +157,7 @@
         return $app['twig']->render('stormtroopers.html.twig', array('stormTroopers' => $department->getEmployees()));
     });
 
-    $app->get('/stormtrooper/{id}', function($id) use ($app) {
+    $app->get('/stormTrooper/{id}', function($id) use ($app) {
         $trooper = Employee::find($id);
         return $app['twig']->render('stormtrooper.html.twig', array('stormtrooper' => $trooper));
     });
