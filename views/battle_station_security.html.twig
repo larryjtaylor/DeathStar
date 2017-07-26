@@ -42,7 +42,7 @@
                 <div class="col-md-4">
                     <h3 class="opsChiefs">Currently Saved Security Wardens :</h3>
                     {% if battle_station_securities is not empty %}
-                        <h3 class="listTitle">Security Officers:</h3>
+                        <h3 class="listTitle">Security Wardens:</h3>
                         <ul>
                             {% for battle_station_security in battle_station_securities %}
                         <li><a href="battle_station_security/{{ battle_station_security.getId }}">{{ battle_station_security.getName }}</a></li>

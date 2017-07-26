@@ -18,7 +18,7 @@
 
     // Set Silex debug mode in $app object
     $app['debug'] = true;
-    
+
     use Symfony\Component\HttpFoundation\Request;
     Request::enableHttpMethodParameterOverride();
 
@@ -157,7 +157,7 @@
         return $app['twig']->render('stormtroopers.html.twig', array('stormTroopers' => $department->getEmployees()));
     });
 
-    $app->get('/stormtrooper/{id}', function($id) use ($app) {
+    $app->get('/stormTrooper/{id}', function($id) use ($app) {
         $trooper = Employee::find($id);
         return $app['twig']->render('stormtrooper.html.twig', array('stormtrooper' => $trooper));
     });
@@ -282,7 +282,7 @@
         return $app['twig']->render('army.html.twig', array("army_officers" => $department->getEmployees()));
     });
 
-    $app->post('/gunners', function() use ($app) {
+    $app->post('/battle_station_gunners', function() use ($app) {
         $name = $_POST['name'];
         $rank = $_POST['rank'];
         $species = $_POST['species'];

@@ -27,7 +27,6 @@ background-size: 60%;
     height: 1300px;
  }
 
-
  #longTime {
     color: #097AFB;
     position: absolute;
@@ -56,6 +55,12 @@ background-size: 60%;
   color: #feda4a;
 }
 
+#joinUs {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    top: 110%;
+}
 .buttons {
     color: #feda4a;
 }
@@ -113,6 +118,15 @@ background-size: 60%;
   border-radius: 10%;
   bottom: 100%;
   border: white 1px solid;
+}
+
+#emperorName {
+    color: #feda4a;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    top: 170%;
 }
 
 #vader {
@@ -178,6 +192,7 @@ audio {
 
 .goHome {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #yularen {
@@ -204,8 +219,125 @@ audio {
     margin-top: 100px;
 }
 
-#Home {
-    text-align: center;
+.Home {
+  display: inline;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.addDept {
+    margin-top: 20px;
+}
+
+#armyTroopers {
+  width: 100%;
+  margin-top: 100px;
+  padding-right: 50px;
+}
+
+.listTitle {
+  color: white;
+}
+
+#navyOfficer {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#navyPilot {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#DSGunner {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#DSTrooper {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#DSSecurity {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#DSSupport{
+  margin-top: 100px;
+  width: 100%;
+}
+
+#stormtroopers{
+  margin-top: 100px;
+  width: 350px;
+  height: 450px;
+}
+
+#logo {
+  margin-top: 100px;
+  height: 600px;
+  width: 400px;
+}
+
+#lunch {
+  margin-top: 100px;
+  height: 600px;
+  width: 600px;
+}
+
+#stormHome {
+    padding-left: 270px;
+}
+
+.indivInfo {
+  color: white;
+  font-size: 20px;
+}
+
+.updateInputs {
+  display: block;
+}
+
+.indivHome {
+  padding-left: 160px;
+}
+
+#boba {
+  margin-top: 100px;
+  height: 400px;
+  width: 400px;
+}
+
+#armada {
+  margin-top: 100px;
+  height: 500px;
+  width: 400px;
+}
+
+#gunnin {
+  margin-top: 100px;
+  height: 500px;
+  width: 400px;
+}
+
+#lego {
+  margin-top: 100px;
+  height: 500px;
+  width: 400px;
+}
+
+#guard {
+  margin-top: 100px;
+  height: 400px;
+  width: 300px;
+}
+
+#spaceballs {
+    margin-top: 50px;
+    height: 500px;
+    width: 400px;
 }
 
 .join {

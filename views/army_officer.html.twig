@@ -27,6 +27,18 @@
                         <li>Pay: {{ army_officer.getPay }} Galactic Credits</li>
                         <li>Record: {{army_officer.getRecord }}</li>
                     </ul>
+                    <form action='/add_depts_AO' method='post'>
+                        <input id="army_officer_id" name="army_officer_id" type="hidden" value="{{ army_officer.getId }}">
+                        <label for="dept_id" class="listTitle"><h3>Assign to a dept:</h3></label>
+                        <select id='dept_id' name='dept_id' type='text'>
+                            {% for department in all_departments %}
+                            {% if department.getId != 1 %}
+                            <option value="{{ department.getId }}"> {{ department.getDeptName }} </option>
+                            {% endif %}
+                            {% endfor %}
+                        </select>
+                        <button type='submit' class="btn btn-info addDept">Add Department</button>
+                    </form>
                 </div>
                 <div class="col-md-5">
                     <img src="/img/empirelogo.svg" alt="Galactic Empire logo" id="logo"/>
@@ -54,17 +66,5 @@
             </div>
         </div>
 
-        <form action='/add_depts_AO' method='post'>
-            <input id="army_officer_id" name="army_officer_id" type="hidden" value="{{ army_officer.getId }}">
-            <label for="dept_id">Select a dept:</label>
-            <select id='dept_id' name='dept_id' type='text'>
-                {% for department in all_departments %}
-                    {% if department.getId != 1 %}
-                        <option value="{{ department.getId }}"> {{ department.getDeptName }} </option>
-                    {% endif %}
-                {% endfor %}
-            </select>
-            <button type='submit'>Add Department</button>
-        </form>
     </body>
 </html>
