@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -28,5 +28,63 @@
             <input name="_method" type="hidden" value="delete">
             <button type="submit">Delete Trooper</button>
         </form>
+    </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/styles.css" media="screen" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Orbitron|Passion+One" rel="stylesheet">
+        <title>Death Star "HR" Portal</title>
+    </head>
+    <body>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/img/Dstarholo.jpg" alt="Death Star Hologram" class="holo"/>
+                </div>
+                <div class="col-md-8">
+                    <h1 class="pageHeader"><em>Imperial Personnel</em></h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <h1 class="listTitle">{{ stormtrooper.getName }}</h1>
+                    <ul class="indivInfo">
+                        <li>Rank: {{ stormtrooper.getRank }}</li>
+                        <li>Species: {{ stormtrooper.getSpecies }}</li>
+                        <li>Pay: {{ stormtrooper.getPay }} Galactic Credits</li>
+                        <li>Record: {{stormtrooper.getRecord }}</li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <img src="/img/lunch.jpg" alt="Lunch break" id="lunch"/>
+                    <div id="armyHome">
+                        <a href="/"><h2>Home</h2></a>
+                        <a href="/stormtroopers"><h2>Back</h2></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="opsChiefs"> Update Stormtrooper</h3>
+                    <form action="/stormtrooper/{{ stormtrooper.getId }}" method="post"class="updateInputs">
+                        <input name="_method" type="hidden" value="patch"><br><br>
+                        <input type="text" name="name" placeholder="Enter Name" required><br><br>
+                        <input type="text" name="rank" placeholder="Enter Rank" required><br><br>
+                        <input type="text" name="species" placeholder="Enter Species" required><br><br>
+                        <input type="number" name="pay" placeholder="Enter Pay" required><br><br>
+                        <input type="text" name="record" placeholder="Enter Record" required><br><br>
+                        <button type="submit" class="btn btn-success">Update Stormtrooper</button>
+                    </form><br>
+                    <form action="/delete_stormtrooper/{{ stormtrooper.getId }}" method="post">
+                        <input name="_method" type="hidden" value="delete">
+                        <button type="submit" class="btn btn-danger">Delete Stormtrooper</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

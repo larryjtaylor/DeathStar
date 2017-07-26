@@ -40,12 +40,12 @@
                     <img src="/img/stormtrooper.jpg" alt="Imperial Stormtroopers" id="stormtroopers"/>
                 </div>
                 <div class="col-md-4">
-                    <h3 class="opsChiefs">Currently Saved Troopers :</h3>
+                    <h3 class="opsChiefs">Currently Saved Stormtroopers :</h3>
                     {% if stormTroopers is not empty %}
-                        <h3 class="listTitle">Stormtroopers:</h3>
+                        <h3 class="listTitle">StormTroopers:</h3>
                         <ul>
                             {% for stormTrooper in stormTroopers %}
-                            <li><a href="stormtrooper/{{ stormTrooper.getId }}">{{ stormTrooper.getName }}</a></li>
+                            <li><a href="stormTrooper/{{ stormTrooper.getId }}">{{ stormTrooper.getName }}</a></li>
                             {% endfor %}
                         </ul>
                     {% endif %}

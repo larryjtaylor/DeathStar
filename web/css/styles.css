@@ -249,10 +249,17 @@ audio {
 
 #stormtroopers{
   margin-top: 100px;
-  width: 100%;
+  width: 400px;
+  height: 500px;
 }
 
 #logo {
+  margin-top: 100px;
+  height: 600px;
+  width: 400px;
+}
+
+#lunch {
   margin-top: 100px;
   height: 600px;
   width: 400px;
@@ -299,6 +306,12 @@ audio {
   margin-top: 100px;
   height: 400px;
   width: 300px;
+}
+
+#spaceballs {
+    margin-top: 50px;
+    height: 500px;
+    width: 400px;
 }
 
 .join {
