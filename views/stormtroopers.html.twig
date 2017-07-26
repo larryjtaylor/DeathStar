@@ -3,27 +3,58 @@
     <head>
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="/css/styles.css" media="screen" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Orbitron|Passion+One" rel="stylesheet">
         <title>Death Star "HR" Portal</title>
     </head>
     <body>
-        <form action="/stormtroopers" method="post">
-            <h3>Add Stormtrooper to Database</h3>
-            <input type="text" name="name" placeholder="Enter Name" required>
-            <input type="text" name="rank" placeholder="Enter Rank" required>
-            <input type="text" name="species" placeholder="Enter Species" required>
-            <input type="number" name="pay" placeholder="Enter Pay" required>
-            <input type="text" name="record" placeholder="Enter Record" required>
-            <button type="submit" class="btn btn-success">Add Stormtrooper</button>
-        </form>
+        <div class="jumbotron">
+            <div class="row">
+                <div class="col-md-4">
+                    <img src="/img/Dstarholo.jpg" alt="Death Star Hologram" class="holo"/>
+                </div>
+                <div class="col-md-8">
+                    <h1 class="pageHeader"><em>Imperial Army Personnel</em></h1>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3">
+                    <form action="/stormtroopers" method="post">
+                        <h3 class="opsChiefs">Add Stormtrooper to Database</h3>
+                        <h3 class="addCategories">Enter Name:</h3>
+                        <input type="text" name="name" placeholder="ex: Chalden Smethwile" required><br><br>
+                        <h3 class="addCategories">Enter Rank:</h3>
+                        <input type="text" name="rank" placeholder="ex: Leiutenant" required><br><br>
+                        <h3 class="addCategories">Enter Species:</h3>
+                        <input type="text" name="species" placeholder="ex: Human" required><br><br>
+                        <h3 class="addCategories">Enter Salary:</h3>
+                        <input type="number" name="pay" placeholder="ex: 58000" required><br><br>
+                        <h3 class="addCategories">Enter Record:</h3>
+                        <input type="text" name="record" placeholder="ex: Distinguished Service" required><br><br>
 
-        {% if stormTroopers is not empty %}
-            <h3>Stormtroopers:</h3>
-            <ul>
-                {% for stormTrooper in stormTroopers %}
-                <li><a href="stormtrooper/{{ stormTrooper.getId }}">{{ stormTrooper.getName }}</a></li>
-                {% endfor %}
-            </ul>
-        {% endif %}
-        <a href="/">Home</a>
+                        <button type="submit" class="btn btn-success">Add Stormtrooper</button>
+                    </form>
+                </div>
+                <div class="col-md-5">
+                    <img src="/img/stormtrooper.jpg" alt="Imperial Stormtroopers" id="stormtroopers"/>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="opsChiefs">Currently Saved Troopers :</h3>
+                    {% if stormTroopers is not empty %}
+                        <h3 class="listTitle">Stormtroopers:</h3>
+                        <ul>
+                            {% for stormTrooper in stormTroopers %}
+                            <li><a href="stormtrooper/{{ stormTrooper.getId }}">{{ stormTrooper.getName }}</a></li>
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="Home">
+            <a href="/"><h2>Home</h2></a>
+            <a href="/army"><h2>Back</h2></a>
+        </div>
     </body>
 </html>

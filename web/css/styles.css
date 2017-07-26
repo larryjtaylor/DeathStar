@@ -110,6 +110,15 @@ background-size: 60%;
   border: white 1px solid;
 }
 
+#emperorName {
+  color: #feda4a;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+  text-align: center;
+  top: 170%;
+}
+
 audio {
     display: none;
     position: absolute;
@@ -162,6 +171,7 @@ audio {
 
 .goHome {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #yularen {
@@ -188,6 +198,53 @@ audio {
     margin-top: 100px;
 }
 
-#Home {
+.Home {
+  display: inline;
     text-align: center;
+    margin-bottom: 20px;
+}
+
+#armyTroopers {
+  width: 100%;
+  margin-top: 100px;
+  padding-right: 50px;
+}
+
+.listTitle {
+  color: white;
+}
+
+#navyOfficer {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#navyPilot {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#DSGunner {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#DSTrooper {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#DSSecurity {
+  margin-top: 100px;
+  width: 100%;
+}
+
+#DSSupport{
+  margin-top: 100px;
+  width: 100%;
+}
+
+#stormtroopers{
+  margin-top: 100px;
+  width: 100%;
 }
