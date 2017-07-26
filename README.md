@@ -1,4 +1,4 @@
-# _DeathStar_
+# _DeathStar "HR"_
 
 #### _Epicodus-PHP, Week 5 Group Project, 07.27.2017_
 
@@ -6,7 +6,7 @@
 
 ## Description
 
-
+_The app is a "human resources" database for the Death Star. The database is pre-loaded with immutable divisions, departments, and high command structure. Users are able to add and edit personnel from officer level down. Users will also be able to assign officers to multiple departments, as well as delete the personnel entry. Personnel are added with name, species, rank, pay, and record attributes. The app can display a global personnel roster with each entry's department. There is also a fun job-board page, enjoy!_
 
 ## Prerequisites
 
@@ -42,13 +42,6 @@ _The app will use PHPunit,  Silex, and Twig._
   * In Tools menu of WebStart page, click phpMyAdmin
   * Once in phpmyadmin page, click Import tab, click browse button, then navigate to the death_star.sql file in the project directory
   * In your browser, enter 'localhost:8888' to view the webpage on your browser
-
-## Specifications
-
-| Behavior | Input | Output |
-|----------|-------|--------|
-|
-
 
 ## Technologies Used
 

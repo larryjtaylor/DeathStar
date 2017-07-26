@@ -53,5 +53,18 @@
                 </div>
             </div>
         </div>
+
+        <form action='/add_depts_NO' method='post'>
+            <input id="navy_officer_id" name="navy_officer_id" type="hidden" value="{{ navy_officer.getId }}">
+            <label for="dept_id">Select a dept:</label>
+            <select id='dept_id' name='dept_id' type='text'>
+                {% for department in all_departments %}
+                    {% if department.getId != 3 %}
+                        <option value="{{ department.getId }}"> {{ department.getDeptName }} </option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <button type='submit'>Add Department</button>
+        </form>
     </body>
 </html>
