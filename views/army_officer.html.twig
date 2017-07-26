@@ -23,6 +23,20 @@
             <input type="text" name="record" placeholder="Enter Record" required>
             <button type="submit" class="btn btn-success">Update Army Officer</button>
         </form>
+
+        <form action='/add_depts_AO' method='post'>
+            <input id="army_officer_id" name="army_officer_id" type="hidden" value="{{ army_officer.getId }}">
+            <label for="dept_id">Select a dept:</label>
+            <select id='dept_id' name='dept_id' type='text'>
+                {% for department in all_departments %}
+                    {% if department.getId != 1 %}
+                        <option value="{{ department.getId }}"> {{ department.getDeptName }} </option>
+                    {% endif %}
+                {% endfor %}
+            </select>
+            <button type='submit'>Add Department</button>
+        </form>
+
         <form action="/delete_army_officer/{{ army_officer.getId }}" method="post">
             <input name="_method" type="hidden" value="delete">
             <button type="submit">Delete Officer</button>

@@ -57,7 +57,14 @@
 
     $app->get('/navy_officer/{id}', function($id) use ($app) {
         $officer = Employee::find($id);
-        return $app['twig']->render('navy_officer.html.twig', array('navy_officer' => $officer));
+        return $app['twig']->render('navy_officer.html.twig', array('navy_officer' => $officer, 'all_departments' => Department::getAll()));
+    });
+
+    $app->post("/add_depts_NO", function() use ($app) {
+        $department = Department::find($_POST['dept_id']);
+        $employee = Employee::find($_POST['navy_officer_id']);
+        $employee->addDepartment($department);
+        return $app['twig']->render('index.html.twig');
     });
 
     $app->patch('/navy_officer/{id}', function($id) use ($app) {
@@ -197,7 +204,14 @@
 
     $app->get('/army_officer/{id}', function($id) use ($app) {
         $officer = Employee::find($id);
-        return $app['twig']->render('army_officer.html.twig', array('army_officer' => $officer));
+        return $app['twig']->render('army_officer.html.twig', array('army_officer' => $officer, 'all_departments' => Department::getAll()));
+    });
+
+    $app->post("/add_depts_AO", function() use ($app) {
+        $department = Department::find($_POST['dept_id']);
+        $employee = Employee::find($_POST['army_officer_id']);
+        $employee->addDepartment($department);
+        return $app['twig']->render('index.html.twig');
     });
 
     $app->patch('/army_officer/{id}', function($id) use ($app) {
