@@ -449,5 +449,9 @@
         return $app['twig']->render('imperial.html.twig');
     });
 
+    $app->get('/jobs', function() use ($app) {
+        return $app['twig']->render('jobs.html.twig');
+    });
+
     return $app;
 ?>
