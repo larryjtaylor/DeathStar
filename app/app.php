@@ -190,7 +190,7 @@
 
     $app->get('/army_officer/{id}', function($id) use ($app) {
         $officer = Employee::find($id);
-        return $app['twig']->render('army_officer.html.twig', array('army_officer' => $officer));
+        return $app['twig']->render('army_officer.html.twig', array('army_officer' => $officer, 'all_departments' => Department::getAll()));
     });
 
     $app->patch('/army_officer/{id}', function($id) use ($app) {
