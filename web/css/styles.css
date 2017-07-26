@@ -108,6 +108,15 @@ background-size: 60%;
   border: white 1px solid;
 }
 
+#emperorName {
+    color: #feda4a;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    top: 170%;
+}
+
 #vader {
   position: absolute;
   height: 350px;
@@ -171,6 +180,7 @@ audio {
 
 .goHome {
     text-align: center;
+    margin-bottom: 20px;
 }
 
 #yularen {
@@ -308,6 +318,13 @@ audio {
     margin-top: 50px;
     height: 500px;
     width: 400px;
+}
+
+.join {
+    text-align: center;
+    font-family: 'Orbitron', sans-serif;
+    color: #feda4a;
+    font-size: 48px;
 }
 
 .jobs {
