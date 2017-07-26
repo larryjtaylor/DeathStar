@@ -10,10 +10,12 @@ background-size: 60%;
 }
 
 #employees ul {
-    color: white;
+    color: darkgray;
+    font-size: 30px;
 }
 
-#employees li {
+#dept {
+    color: white;
     font-size: 20px;
     font-style: oblique;
 }

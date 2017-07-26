@@ -20,14 +20,30 @@
             </div>
             <div id="employees">
                 <h3>All employees currently employed by the Galactic Empire:</h3>
-                <ul>
-                    {% for employee in employees %}
-                        <li> {{ employee.getName }} </li>
-                            {% for department in employee.getDepartments %}
-                                <p> Department: {{ department.getDeptName }} </p>
-                            {% endfor  %}
-                    {% endfor %}
-                <ul>
+
+                    <table>
+                        <tr>
+                            {% for employee in employees %}
+                            {% if loop.index0 is divisibleby(4) %}
+                        </tr>
+                        <tr>
+                            {% endif %}
+                            <td>
+                                <ul>{{ employee.getName }}
+                                        {% for department in employee.getDepartments %}
+                                            <p id="dept"> Department: {{ department.getDeptName }} </p>
+                                        {% endfor  %}
+
+                                </ul>
+                            </td>
+
+                            {% if loop.last %}
+                        </tr>
+                        {% endif %}
+
+                        {%endfor%}
+                    </table>
+
             </div>
             <div id="Home">
                 <a href="/"><h2>Home</h2></a>
