@@ -193,7 +193,7 @@
         return $app['twig']->render('army_officer.html.twig', array('army_officer' => $officer, 'all_departments' => Department::getAll()));
     });
 
-    $app->post("/add_depts", function() use ($app) {
+    $app->post("/add_depts_AO", function() use ($app) {
         $department = Department::find($_POST['dept_id']);
         $employee = Employee::find($_POST['army_officer_id']);
         $employee->addDepartment($department);
