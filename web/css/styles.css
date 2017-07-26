@@ -197,7 +197,6 @@ audio {
     margin-top: 100px;
 }
 
-<<<<<<< HEAD
 .Home {
   display: inline;
   text-align: center;
@@ -309,13 +308,6 @@ audio {
     margin-top: 50px;
     height: 500px;
     width: 400px;
-}
-
-.join {
-    text-align: center;
-    font-family: 'Orbitron', sans-serif;
-    color: #feda4a;
-    font-size: 48px;
 }
 
 .jobs {
