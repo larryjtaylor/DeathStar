@@ -120,7 +120,7 @@
             $returned_employees = $GLOBALS['DB']->query("SELECT employees.* FROM departments
                 JOIN departments_employees ON (departments_employees.department_id = departments.id)
                 JOIN employees ON (employees.id = departments_employees.employee_id)
-                WHERE departments.id = {$this->getId()};");
+                WHERE departments.id = {$this->getId()} ORDER BY name ASC;");
             $employees = array();
             foreach ($returned_employees as $employee) {
                 $employee_name = $employee['name'];
