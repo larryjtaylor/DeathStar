@@ -10,7 +10,14 @@ background-size: 60%;
 }
 
 #employees ul {
+    color: darkgray;
+    font-size: 30px;
+}
+
+#dept {
     color: white;
+    font-size: 20px;
+    font-style: oblique;
 }
 
 .container {
@@ -385,8 +392,4 @@ audio {
 #benefits h3 {
     font-family: 'Orbitron', sans-serif;
     color: #feda4a;
-}
-
-.home {
-    text-align: center;
 }
