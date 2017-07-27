@@ -79,7 +79,7 @@
         $employee->updateSpecies($species);
         $employee->updatePay($pay);
         $employee->updateRecord($record);
-        return $app['twig']->render('navy_officer.html.twig', array('navy_officer' => $employee));
+        return $app['twig']->render('navy_officer.html.twig', array('navy_officer' => $employee, 'all_departments' => Department::getAll()));
     });
 
     $app->delete('/delete_navy_officer/{id}', function($id) use ($app) {
