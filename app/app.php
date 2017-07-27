@@ -226,7 +226,7 @@
         $employee->updateSpecies($species);
         $employee->updatePay($pay);
         $employee->updateRecord($record);
-        return $app['twig']->render('army_officer.html.twig', array('army_officer' => $employee));
+        return $app['twig']->render('army_officer.html.twig', array('army_officer' => $employee, 'all_departments' => Department::getAll()));
     });
 
     $app->delete('/delete_army_officer/{id}', function($id) use ($app) {
