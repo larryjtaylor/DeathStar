@@ -21,7 +21,7 @@ background-size: 60%;
 }
 
 .container {
-    display: flex;
+    /*display: flex;*/
     width: 1000px;
 }
 
