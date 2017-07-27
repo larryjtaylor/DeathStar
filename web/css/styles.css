@@ -21,8 +21,8 @@ background-size: 60%;
 }
 
 .container {
-    display: flex;
-    width: 1000px;
+    /*display: flex;*/
+    /*width: 1000px;*/
 }
 
 .jumbotron#indexStars {
@@ -97,7 +97,7 @@ background-size: 60%;
   top: 130%;
   height: 450;
   width: 400px;
-  border-radius: 20%
+  border-radius: 20%;
 }
 
 #army {
@@ -161,7 +161,6 @@ audio {
 
 .jumbotron {
     background-color: black;
-    /*color: white;*/
     border-bottom: white solid;
     color: #feda4a;
     font-family: 'Alfa Slab One', cursive;
@@ -186,7 +185,7 @@ audio {
 }
 
 #bast {
-    width: 100%
+    width: 100%;
 }
 
 .credit {
@@ -378,7 +377,7 @@ audio {
 
 }
 
-#needsyou h3{
+#needsyou h3 {
     font-family: 'Orbitron', sans-serif;
     color: #feda4a;
 }
