@@ -29,7 +29,7 @@
                     </ul>
                     <form action='/add_depts_AO' method='post'>
                         <input id="army_officer_id" name="army_officer_id" type="hidden" value="{{ army_officer.getId }}">
-                        <label for="dept_id" class="listTitle"><h3>Assign to a dept:</h3></label>
+                        <label for="dept_id" class="listTitle"><h3>Assign to a Department:</h3></label>
                         <select id='dept_id' name='dept_id' type='text'>
                             {% for department in all_departments %}
                             {% if department.getId != 1 %}
