@@ -22,10 +22,10 @@
                 <div class="col-md-3">
                     <h1 class="listTitle">{{ navy_pilot.getName }}</h1>
                     <ul class="indivInfo">
-                        <li>Rank: {{ navy_pilot.getRank }}</li>
-                        <li>Species: {{ navy_pilot.getSpecies }}</li>
-                        <li>Pay: {{ navy_pilot.getPay }} Galactic Credits</li>
-                        <li>Record: {{navy_pilot.getRecord }}</li>
+                        <li>Rank: <span id='dept'>{{ navy_pilot.getRank }}</span></li>
+                        <li>Species: <span id='dept'>{{ navy_pilot.getSpecies }}</span></li>
+                        <li>Pay: <span id='dept'>{{ navy_pilot.getPay }} Galactic Credits</span></li>
+                        <li>Record: <span id='dept'>{{navy_pilot.getRecord }}</span></li>
                     </ul>
                 </div>
                 <div class="col-md-5">

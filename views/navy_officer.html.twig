@@ -22,10 +22,10 @@
                 <div class="col-md-3">
                     <h1 class="listTitle">{{ navy_officer.getName }}</h1>
                     <ul class="indivInfo">
-                        <li>Rank: {{ navy_officer.getRank }}</li>
-                        <li>Species: {{ navy_officer.getSpecies }}</li>
-                        <li>Pay: {{ navy_officer.getPay }} Galactic Credits</li>
-                        <li>Record: {{navy_officer.getRecord }}</li>
+                        <li>Rank: <span id='dept'>{{ navy_officer.getRank }}</span></li>
+                        <li>Species: <span id='dept'>{{ navy_officer.getSpecies }}</span></li>
+                        <li>Pay: <span id='dept'>{{ navy_officer.getPay }} Galactic Credits</span></li>
+                        <li>Record: <span id='dept'>{{navy_officer.getRecord }}</span></li>
                     </ul>
                     <form action='/add_depts_NO' method='post'>
                         <input id="navy_officer_id" name="navy_officer_id" type="hidden" value="{{ navy_officer.getId }}">

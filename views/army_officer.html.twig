@@ -22,10 +22,10 @@
                 <div class="col-md-3">
                     <h1 class="listTitle">{{ army_officer.getName }}</h1>
                     <ul class="indivInfo">
-                        <li>Rank: {{ army_officer.getRank }}</li>
-                        <li>Species: {{ army_officer.getSpecies }}</li>
-                        <li>Pay: {{ army_officer.getPay }} Galactic Credits</li>
-                        <li>Record: {{army_officer.getRecord }}</li>
+                        <li>Rank: <span id='dept'>{{ army_officer.getRank }}</span></li>
+                        <li>Species: <span id='dept'>{{ army_officer.getSpecies }}</span></li>
+                        <li>Pay: <span id='dept'>{{ army_officer.getPay }} Galactic Credits</span></li>
+                        <li>Record: <span id='dept'>{{army_officer.getRecord }}</span></li>
                     </ul>
                     <form action='/add_depts_AO' method='post'>
                         <input id="army_officer_id" name="army_officer_id" type="hidden" value="{{ army_officer.getId }}">
@@ -60,7 +60,7 @@
                     </form><br>
                     <form action="/delete_army_officer/{{ army_officer.getId }}" method="post">
                         <input name="_method" type="hidden" value="delete">
-                        <button type="submit" class="btn btn-danger">Delete Officer</button>
+                        <button type="submit" class="btn btn-danger">Delete Army Officer</button>
                     </form>
                 </div>
             </div>
