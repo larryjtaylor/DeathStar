@@ -399,7 +399,6 @@
             $this->assertEquals($new_pay, $test_employee->getPay());
         }
 
-
         function testUpdateRecord()
         {
             //Arrange

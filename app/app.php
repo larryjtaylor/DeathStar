@@ -28,10 +28,6 @@
        return $app['twig']->render('index.html.twig');
     });
 
-    $app->get('/army', function() use ($app) {
-        return $app['twig']->render('army.html.twig');
-    });
-
     $app->get('/navy', function() use ($app) {
         return $app['twig']->render('navy.html.twig');
     });
@@ -135,8 +131,8 @@
         return $app['twig']->render('navy.html.twig', array("navy_pilots" => $department->getEmployees()));
     });
 
-    $app->get('/battle_station', function() use ($app) {
-        return $app['twig']->render('battle_station.html.twig');
+    $app->get('/imperial', function() use ($app) {
+        return $app['twig']->render('imperial.html.twig');
     });
 
     $app->post('/stormtroopers', function() use ($app) {
@@ -182,6 +178,10 @@
         $trooper->delete();
         $department = Department::find(9);
         return $app['twig']->render('imperial.html.twig', array("stormtrooper" => $department->getEmployees()));
+    });
+
+    $app->get('/army', function() use ($app) {
+        return $app['twig']->render('army.html.twig');
     });
 
     $app->post('/army_officers', function() use ($app) {
@@ -280,6 +280,10 @@
         $officer->delete();
         $department = Department::find(2);
         return $app['twig']->render('army.html.twig', array("army_officers" => $department->getEmployees()));
+    });
+
+    $app->get('/battle_station', function() use ($app) {
+        return $app['twig']->render('battle_station.html.twig');
     });
 
     $app->post('/battle_station_gunners', function() use ($app) {
@@ -466,16 +470,12 @@
         return $app['twig']->render('battle_station.html.twig');
     });
 
-    $app->get('/imperial', function() use ($app) {
-        return $app['twig']->render('imperial.html.twig');
-    });
     $app->get('/jobs', function() use ($app) {
         return $app['twig']->render('jobs.html.twig');
     });
 
     $app->get('/employees', function() use ($app) {
         return $app['twig']->render('employees.html.twig', array('employees' => Employee::getAll(), 'departments' => Department::getAll()));
-
     });
 
     return $app;
