@@ -20,9 +20,10 @@ background-size: 60%;
     font-style: oblique;
 }
 
-.container {
-    /*display: flex;*/
-    width: 1000px;
+
+#indexContainer {
+  height: 1000px;
+  width: 1200px;
 }
 
 .jumbotron#indexStars {
@@ -55,16 +56,16 @@ background-size: 60%;
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  top: 100%;
+  top: 1200px;
   font-size: 66px;
   color: #feda4a;
 }
 
-#seeEmp {
+#seeEmployees {
     position: absolute;
     left: 50%;
     transform: translate(-50%);
-    top: 120%;
+    top: 115%;
 }
 
 #joinUs {
@@ -78,58 +79,81 @@ background-size: 60%;
     color: #feda4a;
 }
 
-#topLabels {
-    color: #feda4a;
-    width: 100%;
+#topLabelLeft {
+  position: absolute;
+  float: left;
+  padding-left: 50px;
+  color: #feda4a;
 }
 
-#bottomLabels {
-    position: absolute;
-    color: #feda4a;
-    width: 100%;
-    top: 190%;
+#topLabelRight {
+  position: absolute;
+  color: #feda4a;
+  padding-left: 800px;
+}
+
+#bottomLabelRight {
+  position: absolute;
+  color: #feda4a;
+  /*width: 100%;*/
+  padding-left: 800px;
+  top: 185%;
+  margin-bottom: 20px;
+}
+
+#bottomLabelLeft {
+  position: absolute;
+  float: left;
+  padding-left: 50px;
+  color: #feda4a;
+  top: 185%;
+  margin-bottom: 20px;
+}
+
+.yellow {
+  color: #feda4a;
 }
 
 #emperor {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-  top: 130%;
+  top: 125%;
   height: 450;
   width: 400px;
-  border-radius: 20%
+  border-radius: 20%;
 }
 
 #army {
-  position: relative;
+  position: absolute;
+  float: left;
+  margin-left: 50px;
+  margin-top: 125px;
   height: 350px;
   width: 300px;
-  /*left: -90%;
-  transform: translate(90%);*/
   border-radius: 10%;
-  margin-top: 2%;
   border: white 1px solid;
 }
 
 #tarkin {
   position: absolute;
+  float: left;
+  margin-left: 825px;
+  margin-top: 125px;
   height: 350px;
   width: 300px;
-  left: 90%;
-  transform: translate(-90%);
   border-radius: 10%;
-  margin-top: 4%;
   border: white 1px solid;
 }
 
 #navy {
   position: absolute;
+  float: left;
+  margin-left: 50px;
+  margin-top: 520px;
   height: 350px;
   width: 300px;
-  /*left: 10%;
-  transform: translate(-10%);*/
   border-radius: 10%;
-  bottom: 100%;
   border: white 1px solid;
 }
 
@@ -144,12 +168,12 @@ background-size: 60%;
 
 #vader {
   position: absolute;
+  float: left;
+  margin-left: 825px;
+  margin-top: 520px;
   height: 350px;
   width: 300px;
-  left: 83%;
-  transform: translate(-83%);
   border-radius: 10%;
-  bottom: 100%;
   border: white 1px solid;
 }
 
@@ -161,7 +185,6 @@ audio {
 
 .jumbotron {
     background-color: black;
-    /*color: white;*/
     border-bottom: white solid;
     color: #feda4a;
     font-family: 'Alfa Slab One', cursive;
@@ -186,7 +209,7 @@ audio {
 }
 
 #bast {
-    width: 100%
+    width: 100%;
 }
 
 .credit {
@@ -377,7 +400,7 @@ audio {
     margin-top: 30px;
 }
 
-#needsyou h3{
+#needsyou h3 {
     font-family: 'Orbitron', sans-serif;
     color: #feda4a;
 }
