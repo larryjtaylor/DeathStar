@@ -29,7 +29,7 @@
                     </ul>
                     <form action='/add_depts_NO' method='post'>
                         <input id="navy_officer_id" name="navy_officer_id" type="hidden" value="{{ navy_officer.getId }}">
-                        <label for="dept_id" class="listTitle"><h3>Assign to a dept:</h3></label>
+                        <label for="dept_id" class="listTitle"><h3>Assign to a Department:</h3></label>
                         <select id='dept_id' name='dept_id' type='text'>
                             {% for department in all_departments %}
                             {% if department.getId != 3 %}
@@ -60,7 +60,7 @@
                     </form><br>
                     <form action="/delete_navy_officer/{{ navy_officer.getId }}" method="post">
                         <input name="_method" type="hidden" value="delete">
-                        <button type="submit" class="btn btn-danger">Delete Officer</button>
+                        <button type="submit" class="btn btn-danger">Delete Navy Officer</button>
                     </form>
                 </div>
             </div>
