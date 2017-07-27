@@ -81,23 +81,23 @@
         }
 
         function testGetDivisionId()
-      {
-          //Arrange
-          $div_name = "Troops";
-          $test_division = new Division($div_name);
-          $test_division->save();
+        {
+            //Arrange
+            $div_name = "Troops";
+            $test_division = new Division($div_name);
+            $test_division->save();
 
-          $division_id = $test_division->getId();
-          $dept_name = "Death Star Troopers";
-          $test_task = new Department($dept_name, $division_id);
-          $test_task->save();
+            $division_id = $test_division->getId();
+            $dept_name = "Death Star Troopers";
+            $test_task = new Department($dept_name, $division_id);
+            $test_task->save();
 
-          //Act
-          $result = $test_task->getDivisionId();
+            //Act
+            $result = $test_task->getDivisionId();
 
-          //Assert
-          $this->assertEquals($division_id, $result);;
-      }
+            //Assert
+            $this->assertEquals($division_id, $result);;
+        }
 
         function testSave()
         {
@@ -190,7 +190,6 @@
         function testUpdate()
         {
             // Arrange
-
             $dept_name = 'Becky';
             $test_division = new Division($dept_name);
             $test_division->save();
@@ -296,9 +295,6 @@
             $result = $new_department->getEmployees();
 
             $this->assertEquals([$new_employee1, $new_employee], $result);
-
-
-
         }
     }
 ?>
