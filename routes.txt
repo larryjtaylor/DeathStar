@@ -1,8 +1,0 @@
-                                    Index (Emperor)
-
-            Army (id-1)       Navy (id-2)       Battle Station (id-3)  Vader (id-4)
-
-        Ops Chief             Ops Chief         Gunners              Storm Troopers
-        Officers              Officers          Troopers
-        Troopers              Pilots            Support/Maintenance
-                                                Security
