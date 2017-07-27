@@ -283,6 +283,7 @@ audio {
 #navyPilot {
   margin-top: 100px;
   width: 100%;
+  padding-left: 0;
 }
 
 #DSGunner {
@@ -518,7 +519,7 @@ audio {
 
 .star-wars-intro .title-content > .content-body {
   font-size: 48px;
-  line-height: 170%;
+  line-height: 190%;
   text-align: center;
 }
 
