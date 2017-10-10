@@ -43,6 +43,23 @@ _The app will use PHPunit,  Silex, and Twig._
   * Once in phpmyadmin page, click Import tab, click browse button, then navigate to the death_star.sql file in the project directory
   * In your browser, enter 'localhost:8888' to view the webpage on your browser
 
+##  Program Preview
+![Home Page Preview](screenshots/crawl.png)
+_Home Page: On loading, page begins with classic Star Wars crawl introducing the site_
+
+![Personnel group](screenshots/group.png)
+_Users can see information about dept. heads._
+
+![Personnel Add](screenshots/add.png)
+_The administrator can add new personnel to the ranks._
+
+![Individual Personnel](screenshots/individual.png)
+_User can see information on an individual worker._
+
+![Recruiter Page](screenshots/join.png)
+_Site includes a recruitment page for the Empire._
+
+
 ## Technologies Used
 
 * _PHP_
